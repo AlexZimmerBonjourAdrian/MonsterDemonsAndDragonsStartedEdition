@@ -178,7 +178,7 @@ Transform:
   m_LocalScale: {x: 0.46125004, y: 0.11895305, z: 1}
   m_Children: []
   m_Father: {fileID: 856111763}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -459,6 +459,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &880753506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1212555846864964253, guid: ec59fb0137803d3499b2c763cd6be6c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1212555847653306380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &880753512
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880753506}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: c316784c701cbff41a856c10ba9cd60c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &970380470
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +914,7 @@ Transform:
   m_LocalScale: {x: 0.46125004, y: 0.11895305, z: 1}
   m_Children: []
   m_Father: {fileID: 856111763}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1452220515
 GameObject:
@@ -1207,6 +1232,27 @@ PrefabInstance:
     - target: {fileID: 1212555846864964244, guid: ec59fb0137803d3499b2c763cd6be6c8,
         type: 3}
       propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212555846864964254, guid: ec59fb0137803d3499b2c763cd6be6c8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 63301056ddf5f4841800915f26c302d2,
+        type: 3}
+    - target: {fileID: 1212555846864964254, guid: ec59fb0137803d3499b2c763cd6be6c8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212555846864964254, guid: ec59fb0137803d3499b2c763cd6be6c8,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212555846864964254, guid: ec59fb0137803d3499b2c763cd6be6c8,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
