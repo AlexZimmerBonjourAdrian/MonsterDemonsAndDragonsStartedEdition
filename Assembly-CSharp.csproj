@@ -62,15 +62,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CBullet.cs" />
-    <Compile Include="Assets\CBulletManager.cs" />
-    <Compile Include="Assets\CGameManager.cs" />
-    <Compile Include="Assets\CGameObject.cs" />
-    <Compile Include="Assets\CManager.cs" />
-    <Compile Include="Assets\CMoveSystem.cs" />
-    <Compile Include="Assets\CPlataforCodign.cs" />
-    <Compile Include="Assets\CPlayer.cs" />
-    <Compile Include="Assets\CSwitch.cs" />
+    <Compile Include="Assets\Script\CBullet.cs" />
+    <Compile Include="Assets\Script\CBulletManager.cs" />
+    <Compile Include="Assets\Script\CGameManager.cs" />
+    <Compile Include="Assets\Script\CGameObject.cs" />
+    <Compile Include="Assets\Script\CManager.cs" />
+    <Compile Include="Assets\Script\CMoveSystem.cs" />
+    <Compile Include="Assets\Script\CPlataforCodign.cs" />
+    <Compile Include="Assets\Script\CPlayer.cs" />
+    <Compile Include="Assets\Script\CSwitch.cs" />
+    <Compile Include="Assets\Script\WindowsEditorBullet.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Usuario/Documents/GitHub/MonsterDemonsAndDragonsStartedEdition/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
