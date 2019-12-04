@@ -37,7 +37,7 @@ public class CBulletManager : CManager
     //        throw new UnityException("Error: cannot create create BulletManager");
     //    }
     //}
-    private void Update()
+    public void Update()
     {
         for(int i = _bulletList.Count -1; i >= 0; i--)
         {

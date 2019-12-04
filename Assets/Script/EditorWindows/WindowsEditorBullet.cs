@@ -11,7 +11,7 @@ public enum WeapondSelect {Pistol,shootGun,Sniper,RocketLauncher,carabine,smg,As
     public prueba prub;
     public WeapondSelect selectwep;
 
-    
+    private GameObject Prefabcharacter;
     float damage = 0f;
     float chancheCritical=0f;
     float dispersion = 0f;
@@ -53,7 +53,7 @@ public enum WeapondSelect {Pistol,shootGun,Sniper,RocketLauncher,carabine,smg,As
 
             case WeapondSelect.AsaultRifle:
                 {
-                   var damage 
+                   
                     damage = EditorGUILayout.FloatField("Damage", damage);
                     chancheCritical = EditorGUILayout.FloatField("Change Critical", chancheCritical);
                     dispersion = EditorGUILayout.FloatField("dispersion", dispersion);
@@ -115,13 +115,6 @@ public enum WeapondSelect {Pistol,shootGun,Sniper,RocketLauncher,carabine,smg,As
         }
     }
     */
-    void AlmacenateValueTemp()
-    {
-        var float dar;
-        if(dar != damage ) 
-        {
-            
-        }
-    }
+   
         
 }
