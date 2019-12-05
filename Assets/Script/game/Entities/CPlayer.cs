@@ -15,7 +15,8 @@ public class CPlayer : MonoBehaviour
     private const int STATE_FALL = 3;
     [HideInInspector]private int _aState = 0;
     [SerializeField]private float _dashSpeed = 30f;
-
+   
+    
    
     
     // Start is called before the first frame update

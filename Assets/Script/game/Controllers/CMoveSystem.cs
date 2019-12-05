@@ -15,23 +15,24 @@ public class CMoveSystem : MonoBehaviour
     [Range(0, 3f)] [SerializeField] private float _MovementSmoothing = .95f;
     private const float _MinjumpForce = 2f;
     private const float _MaxJumpForce = 30f;
-    private Rigidbody2D rigidboy2D;
+    private Rigidbody2D _rigidboy2D;
     private Vector3 _velocity = Vector3.zero;
     private bool _FacingRight = true;
     [SerializeField] private Transform _GroundCheck;
 
     [SerializeField] private Transform _CeilingCheck;
-    [SerializeField] private LayerMask _WhatisGround ;
+    [SerializeField] private LayerMask _WhatisGround;
     [SerializeField] private LayerMask _PlayerLayer;
     [SerializeField] private LayerMask _platformLayer;
 
-    bool jumpoffCourutineIsRunning = false;
-    
 
-    
+
+    int playerLayer, plataformLayer;
+    bool jumpOffCoroutineIsRunning = false;
+
     const float _CillingRadius = .5f;
     const float _GroundedRadius = .5f;
-    
+
     //private const int STATE_STAND= 0;
     //private const int STATE_MOVE = 1;
     //private const int STATE_JUMP = 2;
@@ -41,35 +42,56 @@ public class CMoveSystem : MonoBehaviour
 
     // Start is called before the first frame update
 
-    private void Awake()
-    {
-        rigidboy2D = GetComponent<Rigidbody2D>();
-    }
 
+    private void Start()
+    {
+        _rigidboy2D = GetComponent<Rigidbody2D>();
+        playerLayer = LayerMask.NameToLayer("Player");
+        plataformLayer = LayerMask.NameToLayer("Plataform");
+    }
 
     // Update is called once per frame
 
     private void FixedUpdate()
     {
-        
+
+
+
         _Ground = false;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(_GroundCheck.position, _GroundedRadius, _WhatisGround);
-        
+
+
+
+
         for (int i = 0; i < colliders.Length; i++)
         {
-            
+
             if (colliders[i].gameObject != gameObject)
             {
-                
+
                 _Ground = true;
+
             }
         }
+    
+      
+        if (_rigidboy2D.velocity.y <= 0 && jumpOffCoroutineIsRunning==false)
+        {
+            Debug.Log("Esta en el suelo" + jumpOffCoroutineIsRunning + "isFloor" + _Ground);
+            Physics2D.IgnoreLayerCollision(playerLayer, plataformLayer, false);
+        }
+        else if (_rigidboy2D.velocity.y > 0)
 
-        
+            {
+                Physics2D.IgnoreLayerCollision(playerLayer, plataformLayer, true);
+            }
+            
 
-        
-    }
+        }
+
+       
+    
     
     public void MovePlayer(float move, bool jump)
     {
@@ -78,8 +100,8 @@ public class CMoveSystem : MonoBehaviour
 
 
             //===========================================MoveFunction
-            Vector3 targetVelocity = new Vector3(move * 10f, rigidboy2D.velocity.y);
-            rigidboy2D.velocity = Vector3.SmoothDamp(rigidboy2D.velocity, targetVelocity, ref _velocity, _MovementSmoothing);
+            Vector3 targetVelocity = new Vector3(move * 10f, _rigidboy2D.velocity.y);
+            _rigidboy2D.velocity = Vector3.SmoothDamp(_rigidboy2D.velocity, targetVelocity, ref _velocity, _MovementSmoothing);
             //=======================================
 
 
@@ -101,7 +123,7 @@ public class CMoveSystem : MonoBehaviour
         if (_Ground && jump)
         {
             _Ground = false;
-            rigidboy2D.AddForce(new Vector2(0f, _JumpForce));
+            _rigidboy2D.AddForce(new Vector2(0f, _JumpForce));
         }
         //=============================
     }
@@ -141,17 +163,14 @@ public class CMoveSystem : MonoBehaviour
     
     IEnumerator jumpOff()
     {
-        jumpoffCourutineIsRunning = true;
+        jumpOffCoroutineIsRunning = true;
         Physics2D.IgnoreLayerCollision(_PlayerLayer, _platformLayer, true);
         yield return new WaitForSeconds(0.5f);
         Physics2D.IgnoreLayerCollision(_PlayerLayer, _platformLayer, false);
-        jumpoffCourutineIsRunning = false;
+        jumpOffCoroutineIsRunning = false;
 
     }
-    private void JumpOff()
-    {
-        
-    }
+    
   
 }
 

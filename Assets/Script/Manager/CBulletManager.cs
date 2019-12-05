@@ -9,6 +9,11 @@ public class CBulletManager : CManager
     private GameObject _bulletAsset;
 
 
+    //Temp system :: solo para usar en la etapa de prototypo
+    private const int M1GaractBullet_STATE = 1;
+    private const int GenericBullet_STATE = 2;
+    private const int ShootGunBullet_STATE = 3;
+
     public CBulletManager()
     {
 
@@ -22,7 +27,7 @@ public class CBulletManager : CManager
     private void Awake()
     {
         Inst = this;
-        _bulletAsset = Resources.Load<GameObject>("Bullet");
+        //_bulletAsset = Resources.Load<GameObject>("Bullet");
         _bulletList = new List<CBullet>();
     }
 
@@ -48,10 +53,12 @@ public class CBulletManager : CManager
     public void Spawn(Vector2 pos, Vector2 vel)
     {
         GameObject obj = (GameObject)Instantiate(_bulletAsset, pos, Quaternion.identity);
-        CBullet newBullet = obj.GetComponent<CBullet>();
-        newBullet.AddVel(vel);
-        Destroy(obj, 3f);
-        _bulletList.Add(newBullet);
+        //CBullet newBullet = obj.GetComponent<CBullet>();
+        // newBullet.AddVel(vel);
+        // Destroy(obj, 3f);
+        //_bulletList.Add(newBullet);
+        CBullet newbullet = obj.GetComponent<CM1GaratBullet>();
+        _bulletList.Add(newbullet);
     }
 }
 

@@ -209,7 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e1b0175dbc6ff4daecc007de701c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WepSel: 0
 --- !u!4 &428886563
 Transform:
   m_ObjectHideFlags: 0
@@ -1231,7 +1230,7 @@ PrefabInstance:
     - target: {fileID: 1212555846864964249, guid: ec59fb0137803d3499b2c763cd6be6c8,
         type: 3}
       propertyPath: _MovementSmoothing
-      value: 0.17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1212555846864964249, guid: ec59fb0137803d3499b2c763cd6be6c8,
         type: 3}
@@ -1241,7 +1240,7 @@ PrefabInstance:
     - target: {fileID: 1212555846864964249, guid: ec59fb0137803d3499b2c763cd6be6c8,
         type: 3}
       propertyPath: _JumpForce
-      value: 800
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1212555846864964249, guid: ec59fb0137803d3499b2c763cd6be6c8,
         type: 3}
