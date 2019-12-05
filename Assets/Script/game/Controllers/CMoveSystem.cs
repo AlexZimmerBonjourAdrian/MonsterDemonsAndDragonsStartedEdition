@@ -22,8 +22,8 @@ public class CMoveSystem : MonoBehaviour
 
     [SerializeField] private Transform _CeilingCheck;
     [SerializeField] private LayerMask _WhatisGround;
-    [SerializeField] private LayerMask _PlayerLayer;
-    [SerializeField] private LayerMask _platformLayer;
+     private LayerMask _PlayerLayer;
+     private LayerMask _platformLayer;
 
 
 
@@ -48,6 +48,8 @@ public class CMoveSystem : MonoBehaviour
         _rigidboy2D = GetComponent<Rigidbody2D>();
         playerLayer = LayerMask.NameToLayer("Player");
         plataformLayer = LayerMask.NameToLayer("Plataform");
+        _GroundCheck = transform.Find("Suelo");
+        _CeilingCheck = transform.Find("Techo");
     }
 
     // Update is called once per frame

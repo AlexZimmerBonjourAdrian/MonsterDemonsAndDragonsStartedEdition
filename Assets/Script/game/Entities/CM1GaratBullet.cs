@@ -63,24 +63,24 @@ public class CM1GaratBullet :CBullet
     {
         return _TimeToDie;
     }
-  
 
 
-  
 
-    
-    public void OnCollisionEnter(Collision2D collision)
-    {
+
+   
+    private void OnCollisionEnter2D(Collision2D collision)
+      {
         if(collision.gameObject != gameObject)
         {
             Debug.Log("Ignorame");
         }
-        if(collision.gameObject.tag == "Enemy")
+        else if(collision.gameObject.tag == "Enemy")
         {
             //Funcion ejecucion de particululas o effectos.
-
+            Debug.Log("Se Dstrullo La Balla");
             DestroyImmediate(this);
         }
-    }
+        
+      }
 
 }

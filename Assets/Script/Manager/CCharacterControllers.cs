@@ -11,7 +11,7 @@ public class CCharacterControllers : MonoBehaviour, Iinteractive
     }
       
     // Funcion De dialogo Dialogos
-
+    
     //Funcione De Dialogo para todos los personajes
 
     //Patron de Movimiento

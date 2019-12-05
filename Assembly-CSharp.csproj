@@ -63,7 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\EditorWindows\WindowsEditorBullet.cs" />
+    <Compile Include="Assets\Script\game\Controllers\CCollision.cs" />
     <Compile Include="Assets\Script\game\Controllers\CMoveSystem.cs" />
+    <Compile Include="Assets\Script\game\Entities\CBox.cs" />
     <Compile Include="Assets\Script\game\Entities\CBullet.cs" />
     <Compile Include="Assets\Script\game\Entities\CM1GaratBullet.cs" />
     <Compile Include="Assets\Script\game\Entities\CPlayer.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Assets\Script\Manager\CGameManager.cs" />
     <Compile Include="Assets\Script\Manager\CGameObject.cs" />
     <Compile Include="Assets\Script\Manager\CManager.cs" />
+    <Compile Include="Assets\Script\PlayHolder\CGenericCharacter.cs" />
     <Compile Include="Assets\Script\Switch\CSwitch.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Usuario/Documents/GitHub/MonsterDemonsAndDragonsStartedEdition/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
