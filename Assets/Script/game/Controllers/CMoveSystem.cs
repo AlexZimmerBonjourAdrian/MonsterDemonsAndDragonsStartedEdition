@@ -9,7 +9,7 @@ public class CMoveSystem : MonoBehaviour
     private bool _Ground = false;
     //=====
 
-    private const float MaxSpeed = 30f;
+    //private const float MaxSpeed = 30f;
     [SerializeField] private float _JumpForce = 30f;
 
     [Range(0, 3f)] [SerializeField] private float _MovementSmoothing = .95f;
@@ -58,39 +58,62 @@ public class CMoveSystem : MonoBehaviour
     {
 
 
-
+        
         _Ground = false;
+      
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(_GroundCheck.position, _GroundedRadius, _WhatisGround);
-
-
 
 
         for (int i = 0; i < colliders.Length; i++)
         {
 
+
+            _Ground = true;
+
             if (colliders[i].gameObject != gameObject)
             {
+              
+                if (colliders[i].gameObject.layer == plataformLayer)
+                {
+                    Debug.Log("Toque La Plataform" + plataformLayer);
+                }
 
-                _Ground = true;
+               
+                
+                if (_rigidboy2D.velocity.y <= 0)
+                {
+                    // Debug.Log("Esta en el suelo " + jumpOffCoroutineIsRunning + "isFloor " + _Ground);
+                    Debug.Log("Bajando");
+                    Physics2D.IgnoreLayerCollision(playerLayer, 11, false);
 
-            }
-        }
-    
-      
-        if (_rigidboy2D.velocity.y <= 0 && jumpOffCoroutineIsRunning==false)
-        {
-            Debug.Log("Esta en el suelo" + jumpOffCoroutineIsRunning + "isFloor" + _Ground);
-            Physics2D.IgnoreLayerCollision(playerLayer, plataformLayer, false);
-        }
-        else if (_rigidboy2D.velocity.y > 0)
+                }
+               
 
-            {
-                Physics2D.IgnoreLayerCollision(playerLayer, plataformLayer, true);
             }
             
+            if (_rigidboy2D.velocity.y > 0)
 
+            {
+                Debug.Log("Subiendo");
+                Physics2D.IgnoreLayerCollision(playerLayer, 11, true);
+            }
+            else if (_rigidboy2D.velocity.y <= 0 && !jumpOffCoroutineIsRunning)
+            {
+                // Debug.Log("Esta en el suelo " + jumpOffCoroutineIsRunning + "isFloor " + _Ground);
+                Debug.Log("Bajando");
+                Physics2D.IgnoreLayerCollision(playerLayer, 11, false);
+
+            }
         }
+
+
+
+
+    }
+            
+
+    
 
        
     
@@ -102,8 +125,8 @@ public class CMoveSystem : MonoBehaviour
 
 
             //===========================================MoveFunction
-            Vector3 targetVelocity = new Vector3(move * 10f, _rigidboy2D.velocity.y);
-            _rigidboy2D.velocity = Vector3.SmoothDamp(_rigidboy2D.velocity, targetVelocity, ref _velocity, _MovementSmoothing);
+            Vector3 targetVelocity = new Vector3(move * 10, _rigidboy2D.velocity.y);
+            _rigidboy2D.velocity = Vector3.SmoothDamp(_rigidboy2D.velocity, targetVelocity, ref _velocity, 0.01f);
             //=======================================
 
 
@@ -121,12 +144,17 @@ public class CMoveSystem : MonoBehaviour
             //=============================Jump Part
         }
 
-
+        
         if (_Ground && jump)
         {
+            
             _Ground = false;
             _rigidboy2D.AddForce(new Vector2(0f, _JumpForce));
+            
+            
         }
+        
+        
         //=============================
     }
     //public void incrementVelDown(float DownForz)

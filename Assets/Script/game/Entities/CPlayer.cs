@@ -29,7 +29,7 @@ public class CPlayer : MonoBehaviour
     void Update()
     {
 
-        Debug.Log("Estado" + _aState);
+        //Debug.Log("Estado" + _aState);
         if (Input.GetButton("Horizontal"))
         {
             setState(STATE_MOVE);
@@ -81,6 +81,7 @@ public class CPlayer : MonoBehaviour
             
             jump = true;
             controller.MovePlayer(horizontalMove * Time.deltaTime, jump);
+           
             
           
             

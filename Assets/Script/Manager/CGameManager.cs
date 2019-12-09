@@ -35,7 +35,7 @@ public class CGameManager : MonoBehaviour
     public void Update()
     {
 
-        Debug.Log(IsLoadingScene());
+        //Debug.Log(IsLoadingScene());
 
 
     }

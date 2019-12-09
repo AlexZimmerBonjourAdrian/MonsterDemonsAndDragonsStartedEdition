@@ -71,7 +71,8 @@ public class CCollision : MonoBehaviour
             {
                 _actionState = ACTIONSTATE_INTERACT;
                 Debug.Log("Entra en el entract");
-             }
+                Debug.Log(_actionObj.name);
+            }
         }
         else if(_actionState == ACTIONSTATE_INTERACT)
         {
@@ -79,7 +80,7 @@ public class CCollision : MonoBehaviour
             _actionState = ACTIONSTATE_NONE;
             _actionObj = null;
         }
-
+        
         /*
         if (_actionState == ACTIONSTATE_NONE)
         {
@@ -117,16 +118,19 @@ public class CCollision : MonoBehaviour
 
     private GameObject CollisionObject()
     {
-        Vector2 vect = new Vector2(WEIDTH_BOX, HEIGTH_BOX);
-        Collider2D[] collisions = Physics2D.OverlapBoxAll(transform.position, vect, 0f);
+        Vector2 size = new Vector2(WEIDTH_BOX, HEIGTH_BOX);
+        Collider2D[] collisions = Physics2D.OverlapBoxAll(transform.position, size,0f);
         for (int i = 0; i < collisions.Length; i++)
         {
             if (collisions[i].gameObject != gameObject)
             {
                 anyObject = collisions[i].gameObject;
+                Debug.Log("Estoy Chocando");
                 return anyObject.gameObject;
                
+               
             }
+            
         }
         return anyObject;
     }

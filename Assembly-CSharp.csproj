@@ -65,6 +65,7 @@
     <Compile Include="Assets\Script\EditorWindows\WindowsEditorBullet.cs" />
     <Compile Include="Assets\Script\game\Controllers\CCollision.cs" />
     <Compile Include="Assets\Script\game\Controllers\CMoveSystem.cs" />
+    <Compile Include="Assets\Script\game\Controllers\CRaycasting.cs" />
     <Compile Include="Assets\Script\game\Entities\CBox.cs" />
     <Compile Include="Assets\Script\game\Entities\CBullet.cs" />
     <Compile Include="Assets\Script\game\Entities\CM1GaratBullet.cs" />
