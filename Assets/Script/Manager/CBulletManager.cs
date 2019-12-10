@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CBulletManager : CManager
+public class CBulletManager : MonoBehaviour
 {
     private static CBulletManager Inst = null;
     private List<CBullet> _bulletList;
     private GameObject _bulletAsset;
+  
 
 
     //Temp system :: solo para usar en la etapa de prototypo
     private const int M1GaractBullet_STATE = 1;
     private const int GenericBullet_STATE = 2;
     private const int ShootGunBullet_STATE = 3;
+    private int state = 0;
 
     public CBulletManager()
     {
@@ -42,7 +44,7 @@ public class CBulletManager : CManager
     //        throw new UnityException("Error: cannot create create BulletManager");
     //    }
     //}
-    public void Update()
+         void Update()
     {
         for(int i = _bulletList.Count -1; i >= 0; i--)
         {
@@ -50,16 +52,26 @@ public class CBulletManager : CManager
                 _bulletList.RemoveAt(i);
         }
     }
+    public void setState(int aState)
+    {
+        state = aState;
+        
+    }
     public void Spawn(Vector2 pos, Vector2 vel)
     {
-        GameObject obj = (GameObject)Instantiate(_bulletAsset, pos, Quaternion.identity);
-        //CBullet newBullet = obj.GetComponent<CBullet>();
-        // newBullet.AddVel(vel);
-        // Destroy(obj, 3f);
-        //_bulletList.Add(newBullet);
-        CBullet newbullet = obj.GetComponent<CM1GaratBullet>();
-        _bulletList.Add(newbullet);
-    }
+        if (M1GaractBullet_STATE == 1)
+        {
+            GameObject obj = (GameObject)Instantiate(_bulletAsset, pos, Quaternion.identity);
+            //CBullet newBullet = obj.GetComponent<CBullet>();
+            // newBullet.AddVel(vel);
+            // Destroy(obj, 3f);
+            //_bulletList.Add(newBullet);
+            CBullet newbullet = obj.GetComponent<CM1GaratBullet>();
+            newbullet.setVel(vel);
+            _bulletList.Add(newbullet);
+        }
+     }
+
 }
 
 

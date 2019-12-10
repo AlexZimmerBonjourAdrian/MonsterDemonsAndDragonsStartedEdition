@@ -62,6 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\EditorWindows\CNode.cs" />
+    <Compile Include="Assets\Script\EditorWindows\CNodeBaseEditor.cs" />
+    <Compile Include="Assets\Script\EditorWindows\ConnectionPointType.cs" />
     <Compile Include="Assets\Script\EditorWindows\WindowsEditorBullet.cs" />
     <Compile Include="Assets\Script\game\Controllers\CCollision.cs" />
     <Compile Include="Assets\Script\game\Controllers\CMoveSystem.cs" />
