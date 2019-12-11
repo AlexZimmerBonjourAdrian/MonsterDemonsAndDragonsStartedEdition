@@ -183,14 +183,14 @@ public class CMoveSystem : MonoBehaviour
     
   
    
-
+/*
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_GroundCheck.position, _GroundedRadius);
         Gizmos.DrawWireSphere(_CeilingCheck.position, _GroundedRadius);
     }
-    
+    */
     IEnumerator jumpOff()
     {
         jumpOffCoroutineIsRunning = true;
