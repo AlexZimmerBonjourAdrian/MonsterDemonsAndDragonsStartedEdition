@@ -62,10 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\EditorWindows\CConnection.cs" />
-    <Compile Include="Assets\Script\EditorWindows\CConnectionPoint.cs" />
-    <Compile Include="Assets\Script\EditorWindows\CNode.cs" />
-    <Compile Include="Assets\Script\EditorWindows\CNodeBaseEditor.cs" />
+    <Compile Include="Assets\Script\EditorWindows\EditorNode\CDialogEditor.cs" />
     <Compile Include="Assets\Script\EditorWindows\EditorNode\Connection.cs" />
     <Compile Include="Assets\Script\EditorWindows\EditorNode\ConnectionPoint.cs" />
     <Compile Include="Assets\Script\EditorWindows\EditorNode\Node.cs" />
