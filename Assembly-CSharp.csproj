@@ -69,6 +69,8 @@
     <Compile Include="Assets\Script\EditorWindows\EditorNode\NodeBasedEditor.cs" />
     <Compile Include="Assets\Script\EditorWindows\WindowsEditorBullet.cs" />
     <Compile Include="Assets\Script\game\Controllers\CCollision.cs" />
+    <Compile Include="Assets\Script\game\Controllers\CDialogue.cs" />
+    <Compile Include="Assets\Script\game\Controllers\CDialogueTrigger.cs" />
     <Compile Include="Assets\Script\game\Controllers\CMoveSystem.cs" />
     <Compile Include="Assets\Script\game\Controllers\CRaycasting.cs" />
     <Compile Include="Assets\Script\game\Entities\CBox.cs" />
@@ -76,11 +78,12 @@
     <Compile Include="Assets\Script\game\Entities\CM1GaratBullet.cs" />
     <Compile Include="Assets\Script\game\Entities\CPlayer.cs" />
     <Compile Include="Assets\Script\Interface\Iinteractive.cs" />
-    <Compile Include="Assets\Script\Manager\CBulletManager.cs" />
-    <Compile Include="Assets\Script\Manager\CCharacterControllers.cs" />
-    <Compile Include="Assets\Script\Manager\CGameManager.cs" />
-    <Compile Include="Assets\Script\Manager\CGameObject.cs" />
-    <Compile Include="Assets\Script\Manager\CManager.cs" />
+    <Compile Include="Assets\Script\Manager\Bullet\CBulletManager.cs" />
+    <Compile Include="Assets\Script\Manager\Character\CCharacterControllers.cs" />
+    <Compile Include="Assets\Script\Manager\Dialogue\CDialogueManager.cs" />
+    <Compile Include="Assets\Script\Manager\GameManager\CGameManager.cs" />
+    <Compile Include="Assets\Script\Manager\GameObject\CGameObject.cs" />
+    <Compile Include="Assets\Script\Manager\GenerciManager\CManager.cs" />
     <Compile Include="Assets\Script\PlayHolder\CGenericCharacter.cs" />
     <Compile Include="Assets\Script\Switch\CSwitch.cs" />
     <Reference Include="Unity.Timeline.Editor">

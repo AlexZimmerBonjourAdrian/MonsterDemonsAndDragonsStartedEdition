@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CGenericCharacter : MonoBehaviour,Iinteractive
+public class CGenericCharacter : CCharacterControllers,Iinteractive
 {
     // Start is called before the first frame update
 
