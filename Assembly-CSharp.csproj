@@ -84,6 +84,7 @@
     <Compile Include="Assets\Script\Manager\GameManager\CGameManager.cs" />
     <Compile Include="Assets\Script\Manager\GameObject\CGameObject.cs" />
     <Compile Include="Assets\Script\Manager\GenerciManager\CManager.cs" />
+    <Compile Include="Assets\Script\PlayHolder\CCharacterMuffet.cs" />
     <Compile Include="Assets\Script\PlayHolder\CGenericCharacter.cs" />
     <Compile Include="Assets\Script\Switch\CSwitch.cs" />
     <Reference Include="Unity.Timeline.Editor">
