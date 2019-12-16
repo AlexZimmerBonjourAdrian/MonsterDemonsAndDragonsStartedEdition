@@ -126,6 +126,7 @@ public class CCollision : MonoBehaviour
             {
                 anyObject = collisions[i].gameObject;
                 Debug.Log("Estoy Chocando");
+                Debug.Log(anyObject.gameObject.name);
                 return anyObject.gameObject;
                
                
