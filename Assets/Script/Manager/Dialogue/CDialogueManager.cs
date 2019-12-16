@@ -16,15 +16,15 @@ public class CDialogueManager : MonoBehaviour
     public void StartDialogue(CDialogue dialogue)
     {
         Debug.Log("Entra en la funcion Star Dialogue");
-        sentences.Clear();
+       
         nameText.text = dialogue.name;
-
-        foreach(string sentence in dialogue.sentences)
+        sentences.Clear();
+        foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
-        string sentencer = sentences.Dequeue();
-        dialogueText.text = sentencer;
+        DisplayNextSentence();
+
     }
     //Control de Display del voton para Continuar la conversacion en una direccion
 
