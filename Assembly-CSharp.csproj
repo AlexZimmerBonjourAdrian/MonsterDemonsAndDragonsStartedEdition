@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CMenuManager.cs" />
     <Compile Include="Assets\Script\EditorWindows\EditorNode\CDialogEditor.cs" />
     <Compile Include="Assets\Script\EditorWindows\EditorNode\Connection.cs" />
     <Compile Include="Assets\Script\EditorWindows\EditorNode\ConnectionPoint.cs" />
