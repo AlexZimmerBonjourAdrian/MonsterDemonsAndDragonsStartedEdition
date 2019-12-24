@@ -15,20 +15,26 @@ public class CPlayer : MonoBehaviour
     private const int STATE_FALL = 3;
     [HideInInspector]private int _aState = 0;
     [SerializeField]private float _dashSpeed = 30f;
+    private float vel = 10f;
+    private Transform _positionShoot;
    
-    
-   
-    
+
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CMoveSystem>();
+        _positionShoot = transform.Find("Shoot");
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            CBulletManager.Inst.Spawn(_positionShoot.position,Vector2.right * vel * 2);
+           
+        }
         //Debug.Log("Estado" + _aState);
         if (Input.GetButton("Horizontal"))
         {
@@ -39,11 +45,13 @@ public class CPlayer : MonoBehaviour
             setState(STATE_STAND);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && jump == false ) 
+        if (Input.GetKeyDown(KeyCode.Z) && jump == false ) 
         {
            
             setState(STATE_JUMP);
         }
+
+      
 
         if(_aState==STATE_JUMP)
         {

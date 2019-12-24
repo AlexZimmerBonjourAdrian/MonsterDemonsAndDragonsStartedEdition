@@ -126,7 +126,7 @@ public class CMoveSystem : MonoBehaviour
 
             //===========================================MoveFunction
             Vector3 targetVelocity = new Vector3(move * 10, _rigidboy2D.velocity.y);
-            _rigidboy2D.velocity = Vector3.SmoothDamp(_rigidboy2D.velocity, targetVelocity, ref _velocity, 0.01f);
+            _rigidboy2D.velocity = Vector3.SmoothDamp(_rigidboy2D.velocity, targetVelocity, ref _velocity, _MovementSmoothing);
             //=======================================
 
 
