@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Dialogue:
-    name: Muffet
+    name: Muffet 2
     sentences:
     - aJUJU Hola 2
     - Como 2
@@ -1468,6 +1468,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843130305831550966, guid: 4dd810e60315d844da818c07cdf923d0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312673102461237248, guid: 4dd810e60315d844da818c07cdf923d0,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd810e60315d844da818c07cdf923d0, type: 3}
