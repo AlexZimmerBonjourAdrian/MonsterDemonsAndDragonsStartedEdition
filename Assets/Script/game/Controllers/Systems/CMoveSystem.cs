@@ -12,9 +12,9 @@ public class CMoveSystem : MonoBehaviour
     //private const float MaxSpeed = 30f;
     [SerializeField] private float _JumpForce = 30f;
 
-    [Range(0, 3f)] [SerializeField] private float _MovementSmoothing = .95f;
-    private const float _MinjumpForce = 2f;
-    private const float _MaxJumpForce = 30f;
+    //[Range(0, 3f)] [SerializeField] private float _MovementSmoothing = .95f;
+    //private const float _MinjumpForce = 2f;
+    //private const float _MaxJumpForce = 30f;
     private Rigidbody2D _rigidboy2D;
     private Vector3 _velocity = Vector3.zero;
     private bool _FacingRight = true;
@@ -125,8 +125,9 @@ public class CMoveSystem : MonoBehaviour
 
 
             //===========================================MoveFunction
-            Vector3 targetVelocity = new Vector3(move * 10, _rigidboy2D.velocity.y);
-            _rigidboy2D.velocity = Vector3.SmoothDamp(_rigidboy2D.velocity, targetVelocity, ref _velocity, _MovementSmoothing);
+            Vector3 targetVelocity = new Vector3(move*2, _rigidboy2D.velocity.y);
+          //  _rigidboy2D.velocity = Vector3.SmoothDamp(_rigidboy2D.velocity, targetVelocity, ref _velocity, 0f);//_MovementSmoothing);
+            _rigidboy2D.velocity = new Vector3(targetVelocity.x, _rigidboy2D.velocity.y);
             //=======================================
 
 

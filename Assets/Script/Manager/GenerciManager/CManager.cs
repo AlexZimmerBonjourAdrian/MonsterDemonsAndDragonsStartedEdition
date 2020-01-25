@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CManager : MonoBehaviour
+public class CManager 
 {
     private List<GameObject> mArray;
 
@@ -16,12 +16,13 @@ public class CManager : MonoBehaviour
         mArray.Add(aGameObject);
     }
     // Start is called before the first frame update
-   public void Update()
+  virtual  public void Update()
     {
         for(int i = mArray.Count - 1; i >=0; i --)
         {
             if (mArray[i] == null)
-                removeObjectWithIndex(i);
+               removeObjectWithIndex(i);
+           
         }
     }
     

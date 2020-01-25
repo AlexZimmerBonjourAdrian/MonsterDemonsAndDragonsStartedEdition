@@ -7,6 +7,10 @@ public class CDialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
+    public Animator _AnimatorPanel;
+    public Animator _PlayerCharater;
+    public Animator _PlayHolderCharacter;
+
     public Queue<string> sentences;
 
     private void Start()
@@ -16,7 +20,10 @@ public class CDialogueManager : MonoBehaviour
     public void StartDialogue(CDialogue dialogue)
     {
         Debug.Log("Entra en la funcion Star Dialogue");
-       
+        _AnimatorPanel.SetBool("IsConversation", true);
+        _PlayerCharater.SetBool("IsConversation", true);
+        _PlayHolderCharacter.SetBool("IsConversation", true);
+
         nameText.text = dialogue.name;
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
@@ -49,6 +56,8 @@ public class CDialogueManager : MonoBehaviour
     //Funcion ejecutada al terminar la conversacion Se puede especificar una animacion
     void EndDialogue()
     {
-        Debug.Log("End of conversation");
+        _AnimatorPanel.SetBool("IsConversation", false);
+        _PlayerCharater.SetBool("IsConversation", false);
+        _PlayHolderCharacter.SetBool("IsConversation", false);
     }
 }
