@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CCHaracterManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -18,10 +19,11 @@ public class CCHaracterManager : MonoBehaviour
             return _inst;
         }
     }
+    ArrayList lista = new ArrayList();
     private static CCHaracterManager _inst;
-    private List<CGenericCharacter> _CharaterList;
+    private  ArrayList _CharaterList = new ArrayList();
     [SerializeField] private GameObject _CharacterAsset;
-    private CGenericCharacter Script;
+    //private CCharacterControllers Script;
     public void Awake()
     {
         if(_inst != null && _inst != this)
@@ -32,27 +34,37 @@ public class CCHaracterManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         _inst = this;
 
-        _CharaterList = new List<CGenericCharacter>();
+        //_CharacterAsset = Resources.Load("MuffetSprite") as GameObject;
+        //_CharaterList = new List<CharacterController>();
     }
     public void Update()
     {
-       
-        for(int i = _CharaterList.Count -1; i>=0;i--)
+        /*
+         for(int i = _CharaterList.Count -1; i>=0;i--)
+         {
+             if(_CharaterList[i] == null)
+             {
+                 _CharaterList.RemoveAt(i);
+             }
+         }
+
+         */
+        for (int i=_CharaterList.Count - 1; i >= 0; i--)
         {
-            if(_CharaterList[i] == null)
-            {
+            if (_CharaterList[i] == null)
                 _CharaterList.RemoveAt(i);
-            }
         }
     }
     public void Spawn(Vector2 pos)
     {
 
         GameObject obj = (GameObject)Instantiate(_CharacterAsset, pos, Quaternion.identity);
-       CGenericCharacter newEnemy = new 
-            obj.GetComponent<CGenericCharacter>();
-        _CharaterList.Add(newEnemy);
-
+        //CCharacterControllers character = new CCharacterMuffet();
+        CCharacterControllers newcharacter = obj.GetComponent<CCharacterMuffet>();
+        //character = obj.GetComponent<CCharacterMuffet>();
+       // Debug.Log(character.name);
+        _CharaterList.Add((newcharacter));
+        
     }
     
     public void setAsset(GameObject AssetCharater)
@@ -63,7 +75,7 @@ public class CCHaracterManager : MonoBehaviour
     {
         return _CharacterAsset;
     }
-
+    
 
 }
 

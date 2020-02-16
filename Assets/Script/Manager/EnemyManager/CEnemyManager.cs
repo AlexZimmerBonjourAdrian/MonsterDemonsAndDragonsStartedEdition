@@ -19,7 +19,7 @@ public class CEnemyManager : MonoBehaviour
     }
     private static CEnemyManager _inst;
 
-    private List<CEnemy> _EnemyList;
+    private ArrayList _EnemyList = new ArrayList();
     [SerializeField] private GameObject _EnemyAsset;
 
     // Start is called before the first frame update
@@ -35,7 +35,7 @@ public class CEnemyManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         _inst = this;
 
-        _EnemyList = new List<CEnemy>();
+        //_EnemyList = new List<CEnemy>();
     }
     public void Update()
     {
@@ -48,12 +48,12 @@ public class CEnemyManager : MonoBehaviour
         }
 
     }
-    
+    /*
     public void Spawn(Vector2 pos)
     {
         GameObject obj = (GameObject)Instantiate(_EnemyAsset, pos, Quaternion.identity);
-        CEnemy newEnemy = obj.GetComponent<CEnemy>();
+        CEnemyGeneric newEnemy = obj.GetComponent<>();
         _EnemyList.Add(newEnemy);
     }
-
+    */
 }

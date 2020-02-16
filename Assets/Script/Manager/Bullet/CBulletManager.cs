@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class CBulletManager : MonoBehaviour
 {
-    public static CBulletManager Inst;
-    private List<CGenericBullet> _bulletList;
+    private ArrayList _bulletList = new ArrayList();
     [SerializeField]private GameObject _bulletAsset;
   
 
@@ -14,25 +13,39 @@ public class CBulletManager : MonoBehaviour
 
     //Temp system :: solo para usar en la etapa de prototypo
     private const int GenericBullet_STATE = 0;
-    private const int M1GaractBullet_STATE = 1;
+    private const int SmgBullet_STATE = 1;
     private const int ShootGunBullet_STATE = 2;
+    private const int SniperGunBullet_STATE = 3;
+    private const int MiniGunBullet_STATE = 4;
+    private const int RifleBullet_STATE = 5;
+    private const int RocketLauncher_STATE = 6;
+    private const int OtherBullet_STATE = 7;
     [SerializeField]public int state = 0;
 
-    public CBulletManager()
+    public static CBulletManager Inst
     {
-
+        get
+        {
+            if(_inst == null)
+            {
+                GameObject obj = new GameObject("BulletManager");
+                return obj.AddComponent<CBulletManager>();
+            }
+            return _inst;
+        }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    private static CBulletManager _inst;
     private void Awake()
     {
-        Inst = this;
+        if(_inst != null && _inst != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(this.gameObject);
+        _inst = this;
         //_bulletAsset = Resources.Load<GameObject>("GenericBullet");
-        _bulletList = new List<CGenericBullet>();
+       // _bulletList = new List<CGenericBullet>();
     }
 
     //private void registerSingleton()
@@ -46,6 +59,8 @@ public class CBulletManager : MonoBehaviour
     //        throw new UnityException("Error: cannot create create BulletManager");
     //    }
     //}
+
+    
     void Update()
     {
         /*
@@ -69,6 +84,39 @@ public class CBulletManager : MonoBehaviour
     public void setState(int aState)
     {
         state = aState;
+        if(state == GenericBullet_STATE)
+        {
+
+        }
+
+        else if(state == SmgBullet_STATE)
+        {
+
+        }
+        else if(state ==ShootGunBullet_STATE )
+        {
+
+        }
+        else if(state == MiniGunBullet_STATE)
+        {
+
+        }
+        else if(aState == RifleBullet_STATE)
+        {
+
+        }
+        else if(aState == SniperGunBullet_STATE)
+        {
+
+        }
+        else if(aState ==RocketLauncher_STATE)
+        {
+
+        }
+        else if(aState == OtherBullet_STATE)
+        {
+
+        }
 
     }
     public void Spawn(Vector2 pos, Vector2 vel)
@@ -104,6 +152,12 @@ public class CBulletManager : MonoBehaviour
             }
            */
 
+        /*
+        GameObject obj = (GameObject)Instantiate(_bulletAsset, pos, Quaternion.identity);
+        CGenericBullet newBullet = obj.GetComponent<CGenericBullet>();
+        newBullet.AddVel(vel);
+        _bulletList.Add(newBullet);
+        */
         GameObject obj = (GameObject)Instantiate(_bulletAsset, pos, Quaternion.identity);
         CGenericBullet newBullet = obj.GetComponent<CGenericBullet>();
         newBullet.AddVel(vel);

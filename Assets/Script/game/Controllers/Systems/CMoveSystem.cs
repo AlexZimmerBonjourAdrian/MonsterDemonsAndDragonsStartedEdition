@@ -24,6 +24,7 @@ public class CMoveSystem : MonoBehaviour
     [SerializeField] private LayerMask _WhatisGround;
      private LayerMask _PlayerLayer;
      private LayerMask _platformLayer;
+    private LayerMask _floor;
 
 
 
@@ -48,12 +49,18 @@ public class CMoveSystem : MonoBehaviour
         _rigidboy2D = GetComponent<Rigidbody2D>();
         playerLayer = LayerMask.NameToLayer("Player");
         plataformLayer = LayerMask.NameToLayer("Plataform");
+
+        _floor = LayerMask.NameToLayer("Floor");
+
+        #region zona de saludos
         _GroundCheck = transform.Find("Suelo");
         _CeilingCheck = transform.Find("Techo");
+        #endregion
     }
 
     // Update is called once per frame
 
+    #region Collision Controller
     private void FixedUpdate()
     {
 
@@ -67,8 +74,21 @@ public class CMoveSystem : MonoBehaviour
 
         for (int i = 0; i < colliders.Length; i++)
         {
+            _Ground = true;
+            if (colliders[i].gameObject != gameObject)
+            {
+                //if (colliders[i].gameObject != )
+                  
+                if (colliders[i].gameObject.layer == _platformLayer)
+                {
 
 
+                }
+
+
+            }
+            
+            /*
             _Ground = true;
 
             if (colliders[i].gameObject != gameObject)
@@ -105,31 +125,38 @@ public class CMoveSystem : MonoBehaviour
                 Physics2D.IgnoreLayerCollision(playerLayer, 11, false);
 
             }
+            */
         }
 
 
 
 
     }
-            
 
-    
 
-       
-    
-    
+    #endregion
+
+
+
+
     public void MovePlayer(float move, bool jump)
     {
-        if (_Ground || _AirControl)
+        if (_Ground)
         {
 
 
             //===========================================MoveFunction
-            Vector3 targetVelocity = new Vector3(move*2, _rigidboy2D.velocity.y);
-          //  _rigidboy2D.velocity = Vector3.SmoothDamp(_rigidboy2D.velocity, targetVelocity, ref _velocity, 0f);//_MovementSmoothing);
-            _rigidboy2D.velocity = new Vector3(targetVelocity.x, _rigidboy2D.velocity.y);
+            #region Move Function
+            Vector3 targetVelocity = new Vector3(move*10, _rigidboy2D.velocity.y);
+            #endregion
+            _rigidboy2D.velocity = new Vector2(targetVelocity.x, _rigidboy2D.velocity.y);
+            //  _rigidboy2D.velocity = Vector3.SmoothDamp(_rigidboy2D.velocity, targetVelocity, ref _velocity, 0f);//_MovementSmoothing);
+            //_rigidboy2D.velocity = new Vector3(targetVelocity.x, _rigidboy2D.velocity.y);
             //=======================================
-
+            if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            {
+                _rigidboy2D.velocity = Vector2.zero;
+            }
 
             //==============================Flip condition
             if (move > 0 && !_FacingRight)
@@ -172,6 +199,8 @@ public class CMoveSystem : MonoBehaviour
     //}
 
     //FLIP del personaje basico ajustar despues, para crear 
+    #region flip
+        
     private void Flip()
     {
         _FacingRight = !_FacingRight;
@@ -181,17 +210,18 @@ public class CMoveSystem : MonoBehaviour
         transform.localScale = theScale;
     }
     //==============================================
-    
-  
-   
-/*
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(_GroundCheck.position, _GroundedRadius);
-        Gizmos.DrawWireSphere(_CeilingCheck.position, _GroundedRadius);
-    }
-    */
+    #endregion
+
+
+    /*
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(_GroundCheck.position, _GroundedRadius);
+            Gizmos.DrawWireSphere(_CeilingCheck.position, _GroundedRadius);
+        }
+        */
+        /*
     IEnumerator jumpOff()
     {
         jumpOffCoroutineIsRunning = true;
@@ -201,7 +231,7 @@ public class CMoveSystem : MonoBehaviour
         jumpOffCoroutineIsRunning = false;
 
     }
-    
+    */
   
 }
 
