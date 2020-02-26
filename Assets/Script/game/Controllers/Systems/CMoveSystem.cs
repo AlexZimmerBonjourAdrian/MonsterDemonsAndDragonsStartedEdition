@@ -213,14 +213,14 @@ public class CMoveSystem : MonoBehaviour
     #endregion
 
 
-    /*
+    
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(_GroundCheck.position, _GroundedRadius);
             Gizmos.DrawWireSphere(_CeilingCheck.position, _GroundedRadius);
         }
-        */
+        
         /*
     IEnumerator jumpOff()
     {
@@ -232,6 +232,10 @@ public class CMoveSystem : MonoBehaviour
 
     }
     */
+    private bool getIsFlip()
+    {
+        return _FacingRight;
+    }
   
 }
 

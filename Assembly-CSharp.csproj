@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CGizmo.cs" />
     <Compile Include="Assets\CMenuManager.cs" />
     <Compile Include="Assets\Script\EditorWindows\EditorNode\CDialogEditor.cs" />
     <Compile Include="Assets\Script\EditorWindows\EditorNode\Connection.cs" />
@@ -86,7 +87,27 @@
     <Compile Include="Assets\Script\game\Entities\Bullets\CGenericBullet.cs" />
     <Compile Include="Assets\Script\game\Entities\Bullets\CM1GaratBullet.cs" />
     <Compile Include="Assets\Script\game\Entities\CBox.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CAlice.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CBongso.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CBpnnivel.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CDalart.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CEsmeralda.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CHolly.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CLois.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CMakashi.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CMoffin.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CShafira.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CVampireLoris.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CWhithmask.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CXlf38.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\CZafiro.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\City\DrFluu.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\Forest\CArbolia.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\Forest\CShadowCat.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\Forest\CSteelWolf.cs" />
+    <Compile Include="Assets\Script\game\Entities\Character\Other\CMoxxie.cs" />
     <Compile Include="Assets\Script\game\Entities\CPlayer.cs" />
+    <Compile Include="Assets\Script\game\Entities\Enemy\CEnemy.cs" />
     <Compile Include="Assets\Script\game\Entities\Enemy\CEnemyGeneric.cs" />
     <Compile Include="Assets\Script\game\Entities\Enemy\Forest\CBibif.cs" />
     <Compile Include="Assets\Script\game\Entities\Enemy\Forest\CBorixon.cs" />
@@ -129,9 +150,11 @@
     <Compile Include="Assets\Script\Manager\GameObject\CGameObject.cs" />
     <Compile Include="Assets\Script\Manager\GenerciManager\CManager.cs" />
     <Compile Include="Assets\Script\PlayHolder\CCharacterMuffet.cs" />
-    <Compile Include="Assets\Script\PlayHolder\CEnemy.cs" />
     <Compile Include="Assets\Script\PlayHolder\CGenericCharacter.cs" />
     <Compile Include="Assets\Script\Switch\CSwitch.cs" />
+    <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\readme.txt" />
+    <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\environment\tiles\readme guides IMPORTANT.txt" />
+    <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\license cc0 - public domain.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Usuario/Documents/GitHub/MonsterDemonsAndDragonsStartedEdition/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
