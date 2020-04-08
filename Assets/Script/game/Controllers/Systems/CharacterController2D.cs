@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,9 +16,10 @@ public class CharacterController2D : MonoBehaviour
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
-	private Rigidbody2D m_Rigidbody2D;
+	public Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	//private LayerMask LayerMaskCollision;
 
 	[Header("Events")]
 	[Space]
@@ -39,6 +41,8 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
+
+		//LayerMaskCollision = LayerMask.NameToLayer("Plataform");
 	}
 
 	private void FixedUpdate()
@@ -53,11 +57,17 @@ public class CharacterController2D : MonoBehaviour
 		{
 			if (colliders[i].gameObject != gameObject)
 			{
-				m_Grounded = true;
-				if (!wasGrounded)
-					OnLandEvent.Invoke();
+				//if (colliders[i].gameObject.layer != LayerMaskCollision)
+				//{
+					m_Grounded = true;
+					if (!wasGrounded)
+						OnLandEvent.Invoke();
+				//}
 			}
+			
 		}
+		Debug.Log(m_Grounded);
+		Debug.Log(wasGrounded);
 	}
 
 
@@ -132,7 +142,10 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
-
+	private void OnDrawGizmos()
+	{
+		Gizmos.DrawWireSphere(m_GroundCheck.position, k_GroundedRadius);
+	}
 	private void Flip()
 	{
 		// Switch the way the player is labelled as facing.
