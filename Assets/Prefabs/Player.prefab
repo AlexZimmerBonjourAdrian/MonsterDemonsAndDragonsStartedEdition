@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1212555846864964255}
   - component: {fileID: 1212555846864964254}
-  - component: {fileID: 1212555846864964249}
-  - component: {fileID: 1212555846864964248}
   - component: {fileID: 1212555846864964244}
   - component: {fileID: 1212555846864964251}
   - component: {fileID: 8392522307632478810}
@@ -50,6 +48,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -72,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -876089145
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,40 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1212555846864964249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212555846864964253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e591d85116561f444be07d52576336db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _JumpForce: 10
-  _MovementSmoothing: 0.96
-  _GroundCheck: {fileID: 0}
-  _CeilingCheck: {fileID: 0}
-  _WhatisGround:
-    serializedVersion: 2
-    m_Bits: 1
---- !u!114 &1212555846864964248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212555846864964253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ed3f98c7c70df24d99a7c63ec7f79a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _Speed: 20
-  DelayStateFall: 1
-  _dashSpeed: 30
 --- !u!50 &1212555846864964244
 Rigidbody2D:
   serializedVersion: 4
