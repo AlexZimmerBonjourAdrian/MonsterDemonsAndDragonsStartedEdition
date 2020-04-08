@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class CBulletManager : MonoBehaviour
 {
-    private ArrayList _bulletList = new ArrayList();
+    private List<CBullet> _bulletList;
     [SerializeField]private GameObject _bulletAsset;
   
 
@@ -63,6 +64,7 @@ public class CBulletManager : MonoBehaviour
     private void Start()
     {
         //_bulletAsset = Resources.Load<GameObject>("Assets/Prefabs/Bullet/BulletRifle.pref");
+        _bulletList = new List<CBullet>();
     }
 
     void Update()
@@ -159,7 +161,9 @@ public void Spawn(Vector2 pos, Vector2 vel,float Rot)
         _bulletList.Add(newBullet);
         */
         GameObject obj = (GameObject)Instantiate(_bulletAsset, pos, rotation);
-        CGenericBullet newBullet = obj.GetComponent<CGenericBullet>();
+        CBullet newBullet = obj.GetComponent<CBullet>();
+        //newBullet = new CBullet();
+        //newBullet = obj.GetComponent<CBullet>();
         newBullet.AddVel(vel);
         _bulletList.Add(newBullet);
 
