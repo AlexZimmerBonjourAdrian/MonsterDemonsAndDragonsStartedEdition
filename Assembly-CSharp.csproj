@@ -89,6 +89,7 @@
     <Compile Include="Assets\Script\game\Controllers\Dialogue\CDialogueTrigger.cs" />
     <Compile Include="Assets\Script\game\Controllers\Systems\CMeeleCombatSystem.cs" />
     <Compile Include="Assets\Script\game\Controllers\Systems\CMoveSystem.cs" />
+    <Compile Include="Assets\Script\game\Controllers\Systems\CShootScript.cs" />
     <Compile Include="Assets\Script\game\Controllers\Systems\CharacterController2D.cs" />
     <Compile Include="Assets\Script\game\Controllers\Systems\PlayerMovement.cs" />
     <Compile Include="Assets\Script\game\Entities\Boss\Forest\CAcura.cs" />

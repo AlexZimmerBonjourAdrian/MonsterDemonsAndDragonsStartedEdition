@@ -51,7 +51,7 @@ public class CPlayer : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.X))
         {
-            CBulletManager.Inst.Spawn(_positionShoot.position,Vector2.right * vel * 2);
+            //CBulletManager.Inst.Spawn(_positionShoot.position,Vector2.right * vel * 2);
 
            
         }

@@ -98,6 +98,7 @@ public class PlayerMovement : MonoBehaviour {
 			
 		}*/
 	}
+	/*
 	void setExitState(int aState)
 	{
 		if(aState == STAND_STATE)
@@ -105,6 +106,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		}
 	}
+	*/
 	
 
 

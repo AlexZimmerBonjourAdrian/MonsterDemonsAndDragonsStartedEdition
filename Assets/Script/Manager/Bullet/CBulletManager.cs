@@ -12,6 +12,7 @@ public class CBulletManager : MonoBehaviour
 
 
     //Temp system :: solo para usar en la etapa de prototypo
+    /*
     private const int GenericBullet_STATE = 0;
     private const int SmgBullet_STATE = 1;
     private const int ShootGunBullet_STATE = 2;
@@ -20,8 +21,8 @@ public class CBulletManager : MonoBehaviour
     private const int RifleBullet_STATE = 5;
     private const int RocketLauncher_STATE = 6;
     private const int OtherBullet_STATE = 7;
-    [SerializeField]public int state = 0;
-
+    public int state = 0;
+    */
     public static CBulletManager Inst
     {
         get
@@ -59,8 +60,11 @@ public class CBulletManager : MonoBehaviour
     //        throw new UnityException("Error: cannot create create BulletManager");
     //    }
     //}
+    private void Start()
+    {
+        //_bulletAsset = Resources.Load<GameObject>("Assets/Prefabs/Bullet/BulletRifle.pref");
+    }
 
-    
     void Update()
     {
         /*
@@ -81,46 +85,42 @@ public class CBulletManager : MonoBehaviour
                 _bulletList.RemoveAt(i);
         }
     }
-    public void setState(int aState)
+    /*
+    public void setWeapon(int aState)
     {
         state = aState;
-        if(state == GenericBullet_STATE)
+        switch(state)
         {
+            case 1:
+                _bulletAsset = Resources.Load <GameObject> ("Assets/Prefabs/Bullet/M1GarathBullet.pref");
+                break;
+            case 2:
+                _bulletAsset = Resources.Load<GameObject>("Assets/Prefabs/Bullet/GenericBullet.pref");
+                break;
+            case 3:
+                _bulletAsset = Resources.Load<GameObject>("Assets/Prefabs/Bullet/BulletRifle.pref");
+                break;
+            case 4:
+                _bulletAsset = Resources.Load<GameObject>("Assets/Prefabs/Bullet/BulletPistol.pref");
+                break;
+            case 5:
+                _bulletAsset = Resources.Load<GameObject>("Assets/Prefabs/Bullet/BulletShootGun.pref");
+                break;
+           
+            case 6:
+                _bulletAsset = Resources.Load<GameObject>("Assets/Prefabs/Bullet/RocketBullet.pref");
+                break;
+                
 
         }
-
-        else if(state == SmgBullet_STATE)
-        {
-
-        }
-        else if(state ==ShootGunBullet_STATE )
-        {
-
-        }
-        else if(state == MiniGunBullet_STATE)
-        {
-
-        }
-        else if(aState == RifleBullet_STATE)
-        {
-
-        }
-        else if(aState == SniperGunBullet_STATE)
-        {
-
-        }
-        else if(aState ==RocketLauncher_STATE)
-        {
-
-        }
-        else if(aState == OtherBullet_STATE)
-        {
-
-        }
-
+        
+    
     }
-    public void Spawn(Vector2 pos, Vector2 vel)
+    */
+public void Spawn(Vector2 pos, Vector2 vel,float Rot)
     {
+
+        Quaternion rotation=new Quaternion(Quaternion.identity.x,Quaternion.identity.y,Quaternion.identity.z * Rot,Quaternion.identity.w);
         /*
          if (Input.GetKeyDown(KeyCode.X))
         {
@@ -158,12 +158,13 @@ public class CBulletManager : MonoBehaviour
         newBullet.AddVel(vel);
         _bulletList.Add(newBullet);
         */
-        GameObject obj = (GameObject)Instantiate(_bulletAsset, pos, Quaternion.identity);
+        GameObject obj = (GameObject)Instantiate(_bulletAsset, pos, rotation);
         CGenericBullet newBullet = obj.GetComponent<CGenericBullet>();
         newBullet.AddVel(vel);
         _bulletList.Add(newBullet);
 
     }
+    
 }
 
 
