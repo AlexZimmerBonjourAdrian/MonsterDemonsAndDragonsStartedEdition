@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CBullet : MonoBehaviour
+public class CBullet : CGenericBullet
 {
     
     public Rigidbody2D _rigidbody;
@@ -93,9 +93,9 @@ public class CBullet : MonoBehaviour
 
     }
     
-  public void AddVel(Vector3 vel)
+  public override void AddVel(Vector3 vel)
     {
-        _rigidbody.AddForce(vel, ForceMode2D.Impulse);
+        base.AddVel(vel);
     }
     
     //funcion de control de particulas o sprite 
