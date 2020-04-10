@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using UnityEditor.Build.Content;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class CBulletManager : CGenericBullet
 {
@@ -122,7 +124,8 @@ public class CBulletManager : CGenericBullet
 public void Spawn(Vector2 pos, Vector2 vel,float Rot)
     {
 
-        Quaternion rotation=new Quaternion(Quaternion.identity.x,Quaternion.identity.y,Quaternion.identity.z * Rot,Quaternion.identity.w);
+        //Quaternion rotation = new Quaternion(transform.rotation.x * Rot,transform.rotation.y, Quaternion.identity.z, Quaternion.identity.w);
+
         /*
          if (Input.GetKeyDown(KeyCode.X))
         {
@@ -160,13 +163,19 @@ public void Spawn(Vector2 pos, Vector2 vel,float Rot)
         newBullet.AddVel(vel);
         _bulletList.Add(newBullet);
         */
-        GameObject obj = (GameObject)Instantiate(_bulletAsset, pos, rotation);
+        #region Tengo que investigar como usar esto para rotarlo en 7 direcciones
+        GameObject obj = (GameObject)Instantiate(_bulletAsset, pos, Quaternion.identity);
+        Vector3 localScale=obj.transform.localScale;
+        localScale.x *= Rot;
+        obj.transform.localScale = localScale;
         CGenericBullet newBullet = obj.GetComponent<CBullet>();
         newBullet.AddVel(vel);
         _bulletList.Add(newBullet);
+        #endregion
+
 
     }
-    
+
 }
 
 

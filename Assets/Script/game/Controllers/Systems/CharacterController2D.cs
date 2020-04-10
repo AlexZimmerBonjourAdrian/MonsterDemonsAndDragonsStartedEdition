@@ -66,8 +66,8 @@ public class CharacterController2D : MonoBehaviour
 			}
 			
 		}
-		Debug.Log(m_Grounded);
-		Debug.Log(wasGrounded);
+		//Debug.Log(m_Grounded);
+		//Debug.Log(wasGrounded);
 	}
 
 
@@ -155,10 +155,12 @@ public class CharacterController2D : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+
+		
 	}
 
-	public bool getFlip()
+	public Vector3 getFlip()
 	{
-		return m_FacingRight;
+		return transform.localScale;
 	}
 }

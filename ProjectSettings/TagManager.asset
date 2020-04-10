@@ -57,3 +57,6 @@ TagManager:
   - name: Bullet
     uniqueID: 3937468651
     locked: 0
+  - name: weapond
+    uniqueID: 2951470531
+    locked: 0

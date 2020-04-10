@@ -8,7 +8,7 @@ public class CShootScript : MonoBehaviour
     private CharacterController2D _controller;
     [SerializeField] private Transform _positionShoot;
     private float _vel= 40f;
-    private float _rote;
+    private float _rote=1;
     private int _SelectWeapond=1;
     private void Start()
     {
@@ -31,7 +31,7 @@ public class CShootScript : MonoBehaviour
             }
         }
         */
-
+        ControlFlip();
 
         if(Input.GetKey(KeyCode.X))
         {
@@ -41,20 +41,20 @@ public class CShootScript : MonoBehaviour
 
             
         }
+        Debug.Log(_rote);
         
     }
 
     private void ControlFlip()
     {
-        if(_controller.getFlip() == true)
+       if(_controller.getFlip().x > 0)
         {
-            _rote = 1f;
+            _rote = 1;
         }
-        else
+       else if(_controller.getFlip().x<0)
         {
-            _rote *= -1f;
+            _rote = -1;
         }
-
     }
  
 

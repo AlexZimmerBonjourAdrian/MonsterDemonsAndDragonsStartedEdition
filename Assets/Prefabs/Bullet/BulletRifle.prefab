@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2304120971395856300}
   - component: {fileID: 8461759133337671712}
   - component: {fileID: -7935481183027193590}
+  - component: {fileID: -3886672538827266877}
+  - component: {fileID: 5664715433475408587}
   m_Layer: 0
   m_Name: BulletRifle
   m_TagString: Untagged
@@ -108,3 +110,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45, y: 0.23}
   m_EdgeRadius: 0
+--- !u!114 &-3886672538827266877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116951932293633819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e1b0175dbc6ff4daecc007de701c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 5664715433475408587}
+--- !u!50 &5664715433475408587
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116951932293633819}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

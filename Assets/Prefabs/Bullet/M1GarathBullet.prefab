@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1817489245867165758}
   - component: {fileID: 3074646848033415055}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: M1GarathBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,6 +48,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -142,3 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127e3064a606a284f816c6e438d45805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 3025509986449572446}

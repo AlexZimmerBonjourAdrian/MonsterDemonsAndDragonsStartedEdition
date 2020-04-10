@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
 	public Animator animator;
 
 	public float runSpeed = 40f;
-	public Rigidbody2D _rigidbody2D;
+	private Rigidbody2D _rigidbody2D;
 	float horizontalMove = 0f;
 	bool jump = true;
 	bool crouch = false;

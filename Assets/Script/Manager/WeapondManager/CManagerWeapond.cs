@@ -7,7 +7,7 @@ public class CManagerWeapond : MonoBehaviour
     // Start is called before the first frame update
     private ArrayList _WeapondList = new ArrayList();
     [SerializeField] private GameObject _WeapondObject;
-    
+    [SerializeField] private Transform _transformWeapondManager;
     public static CManagerWeapond Inst
     {
         get
@@ -32,20 +32,33 @@ public class CManagerWeapond : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         _inst = this;
     }
-    void Start()
-    {
-        
-    }
+  
 
     // Update is called once per frame
     void Update()
     {
-        
+
+        for(int i = _WeapondList.Count -1; i>=0;i--)
+        {
+            if(_WeapondList[i] == null)
+            {
+                _WeapondList.RemoveAt(i);
+            }
+        }
+        #region Codigo provicional del manager
+       if(Input.GetKeyDown(KeyCode.T))
+        {
+            SpawnWeapond(_transformWeapondManager.position);
+        }
+
+        #endregion
+
     }
 
-   public void SpawnWeapond(Vector2 pos)
+    public void SpawnWeapond(Vector2 pos)
     {
         GameObject obj = (GameObject)Instantiate(_WeapondObject, pos, Quaternion.identity);
-       
+        CGenericWeapon newWeapon = obj.GetComponent<CMiniMiniGun>();
+        _WeapondList.Add(newWeapon);
     }
 }
