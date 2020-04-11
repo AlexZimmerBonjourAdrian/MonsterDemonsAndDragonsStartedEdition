@@ -60,3 +60,6 @@ TagManager:
   - name: weapond
     uniqueID: 2951470531
     locked: 0
+  - name: items
+    uniqueID: 2165832149
+    locked: 0

@@ -15,7 +15,10 @@ public class PlayerMovement : MonoBehaviour {
 	private const int STAND_STATE= 0;
 	private const int RUN_STATE= 1;
 	private const int JUMP_STATE = 2;
+	private const int DASH_STATE = 3;
 	private int _state = 0;
+
+	//private ControllerWeapond  
 
 	private void Awake()
 	{
@@ -76,11 +79,20 @@ public class PlayerMovement : MonoBehaviour {
 		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
 		jump = false;
 	}
+    #region Dash 
+
 	
+
+    #endregion
+
+    #region Armas
+
+    #endregion
+    /*
 	void setState( int aState)
 	{
 		aState = _state;
-		/*if(aState== STAND_STATE)
+		if(aState== STAND_STATE)
 		{
 			
 		}
@@ -90,15 +102,10 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		else if(aState == JUMP_STATE)
 		{
-
-		
-				
-			
-
-			
-		}*/
+		}
+		else if(aState == d)
 	}
-	/*
+	
 	void setExitState(int aState)
 	{
 		if(aState == STAND_STATE)
@@ -107,8 +114,5 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 	*/
-	
-
-
 	
 }

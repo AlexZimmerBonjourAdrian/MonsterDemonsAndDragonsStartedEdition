@@ -1,11 +1,11 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
 public class CGameManager : MonoBehaviour
 {
+    public CPlayerManager[] _player;
     public static CGameManager Inst
     {
         get
@@ -21,6 +21,14 @@ public class CGameManager : MonoBehaviour
     private static CGameManager _inst;
     private AsyncOperation _currentLoadScene;
 
+    #region ValueManagerPlayer
+  
+    private GameObject _ActualPlayer;
+    public GameObject _PlayerNatalia;
+    public GameObject _PlayerLoop;
+    
+    #endregion
+
     public void Awake()
     {
         if (_inst != null && _inst != this)
@@ -31,14 +39,40 @@ public class CGameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         _inst = this;
     }
+    
 
     public void Update()
     {
 
         //Debug.Log(IsLoadingScene());
-
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            spawnPlayer();
+        }
 
     }
+    private void spawnPlayer()
+    {
+        
+        
+        for (int i = 0; i < _player.Length;i++)
+        {
+            if (_player[i]._PlayerNumber == 0)// _PlayerNumber == 0)
+            {
+                _ActualPlayer = _PlayerLoop;
+            }
+            else if (_player[i]._PlayerNumber== 1)
+            {
+                _ActualPlayer = _PlayerNatalia;
+            }
+
+            _player[i]._Instance = Instantiate(_ActualPlayer, _player[i]._SpawnPoint.position, _player[i]._SpawnPoint.rotation) as GameObject;
+                //_player[i]._PlayerNumber = i + 1;
+                _player[i].Setup();
+         }
+         
+    }
+    #region ControlDeEcenarios
     public void LateUpdate()
     {
         if(_currentLoadScene != null)
@@ -69,4 +103,7 @@ public class CGameManager : MonoBehaviour
     {
         _currentLoadScene = SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive);
     }
+    #endregion
+
+
 }
