@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour {
 	public Animator animator;
 
 	public float runSpeed = 40f;
+	[SerializeField] private float _speed = 40f;
 	private Rigidbody2D _rigidbody2D;
 	float horizontalMove = 0f;
 	bool jump = true;
@@ -17,7 +18,7 @@ public class PlayerMovement : MonoBehaviour {
 	private const int JUMP_STATE = 2;
 	private const int DASH_STATE = 3;
 	private int _state = 0;
-
+	private int _rote=0;
 	//private ControllerWeapond  
 
 	private void Awake()
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour {
 			//setState(STAND_STATE);
 		}
 		*/
+		
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
 		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
@@ -43,6 +45,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		if (Input.GetButtonDown("Jump"))
 		{
+
 			jump = true;
 			animator.SetBool("IsJumping", true);
 			
@@ -57,7 +60,19 @@ public class PlayerMovement : MonoBehaviour {
 			crouch = false;
 		}
 		*/
-
+		//if(Input.GetButtonDown("Dash"))
+		if(Input.GetKeyDown(KeyCode.LeftShift))
+		{
+			ControlFlip();
+			if (_rote == 1)
+			{
+				Dash(Vector3.right * _speed);
+			}
+			else
+			{
+				Dash(Vector3.right * -_speed);
+			}
+		}
 
 	}
 	
@@ -79,16 +94,19 @@ public class PlayerMovement : MonoBehaviour {
 		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
 		jump = false;
 	}
-    #region Dash 
+	#region Dash 
 
-	
+	private void Dash(Vector2 _SpeedVel)
+	{
+		_rigidbody2D.AddForce(_SpeedVel, ForceMode2D.Force);
+	}
 
-    #endregion
+	#endregion
 
-    #region Armas
+	#region Armas
 
-    #endregion
-    /*
+	#endregion
+	/*
 	void setState( int aState)
 	{
 		aState = _state;
@@ -114,5 +132,17 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 	*/
-	
+	private void ControlFlip()
+	{
+		
+		if (controller.getFlip().x > 0)
+		{
+			_rote = 1;
+		}
+		else if (controller.getFlip().x < 0)
+		{
+			_rote = -1;
+		}
+	}
+
 }

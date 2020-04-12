@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CPlayerNatalia : MonoBehaviour
+public class CPlayerNatalia : CPlayer
 {
     public CharacterController2D controller;
     public Animator animator;

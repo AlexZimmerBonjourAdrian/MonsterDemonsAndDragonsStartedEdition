@@ -46,7 +46,7 @@ public class CShootScript : MonoBehaviour
     }
 
     private void ControlFlip()
-    {
+   {
        if(_controller.getFlip().x > 0)
         {
             _rote = 1;
@@ -54,7 +54,7 @@ public class CShootScript : MonoBehaviour
        else if(_controller.getFlip().x<0)
         {
             _rote = -1;
-        }
+        } 
     }
  
 

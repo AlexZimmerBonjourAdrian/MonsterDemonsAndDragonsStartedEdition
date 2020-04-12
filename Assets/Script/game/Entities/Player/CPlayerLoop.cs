@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CPlayerLoop : MonoBehaviour
+public class CPlayerLoop : PlayerMovement
 {
-    public CharacterController2D controller;
-    public Animator animator;
+    //public CharacterController2D controller;
+    //public Animator animator;
 
-    public float runSpeed = 40f;
+    //public float runSpeed = 40f;
     private Rigidbody2D _rigidbody2D;
     private float _horizontalMove = 0f;
     private bool jump = true;
@@ -28,14 +28,15 @@ public class CPlayerLoop : MonoBehaviour
     void Update()
    {
         _horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-
+        /*
         animator.SetFloat("Speed", Mathf.Abs(_horizontalMove));
         animator.SetFloat("SpeedY", Mathf.Abs(_horizontalMove));
-
+        */
+        
         if(Input.GetButtonDown("Jump"))
         {
             jump = true;
-            animator.SetBool("IsJumpimg", true);
+            //animator.SetBool("IsJumpimg", true);
         }
 
         if(Input.GetKeyDown(KeyCode.Tab))
@@ -43,10 +44,12 @@ public class CPlayerLoop : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    /*
     public void OnLanding()
     {
         animator.SetBool("IsJumping", false);
     }
+    */
     private void FixedUpdate()
     {
         controller.Move(_horizontalMove * Time.fixedDeltaTime, crouch, jump);

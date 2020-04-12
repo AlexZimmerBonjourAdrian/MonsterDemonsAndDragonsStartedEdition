@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,6 +20,7 @@ public class CharacterController2D : MonoBehaviour
 	public Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	private bool _IsDash= true;
 	//private LayerMask LayerMaskCollision;
 
 	[Header("Events")]
@@ -144,8 +146,10 @@ public class CharacterController2D : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
+		
 		Gizmos.DrawWireSphere(m_GroundCheck.position, k_GroundedRadius);
-	}
+		
+		}
 	private void Flip()
 	{
 		// Switch the way the player is labelled as facing.
