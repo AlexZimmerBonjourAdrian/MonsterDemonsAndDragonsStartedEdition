@@ -164,6 +164,15 @@
     <Compile Include="Assets\Script\game\Entities\Player\CPlayerNatalia.cs" />
     <Compile Include="Assets\Script\game\Entities\weapon\CGenericWeapon.cs" />
     <Compile Include="Assets\Script\game\Entities\weapon\LoopWeapon\CMiniMiniGun.cs" />
+    <Compile Include="Assets\Script\game\Entities\weapon\LoopWeapon\CPistolAcid.cs" />
+    <Compile Include="Assets\Script\game\Entities\weapon\LoopWeapon\CPistolM1911.cs" />
+    <Compile Include="Assets\Script\game\Entities\weapon\LoopWeapon\CRifleGarad.cs" />
+    <Compile Include="Assets\Script\game\Entities\weapon\LoopWeapon\CShootGunHAMMER.cs" />
+    <Compile Include="Assets\Script\game\Entities\weapon\NataliaWeapond\CAirCannon.cs" />
+    <Compile Include="Assets\Script\game\Entities\weapon\NataliaWeapond\CFlameShoot.cs" />
+    <Compile Include="Assets\Script\game\Entities\weapon\NataliaWeapond\CHandSmg.cs" />
+    <Compile Include="Assets\Script\game\Entities\weapon\NataliaWeapond\CSmallSMG.cs" />
+    <Compile Include="Assets\Script\game\Entities\weapon\NataliaWeapond\CSniperLaser.cs" />
     <Compile Include="Assets\Script\game\State\CTestLevelState.cs" />
     <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\readme.txt" />
     <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\environment\tiles\readme guides IMPORTANT.txt" />

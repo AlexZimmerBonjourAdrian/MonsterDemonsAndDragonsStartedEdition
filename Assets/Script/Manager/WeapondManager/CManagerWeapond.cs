@@ -5,7 +5,7 @@ using UnityEngine;
 public class CManagerWeapond : MonoBehaviour
 {
     // Start is called before the first frame update
-    private ArrayList _WeapondList = new ArrayList();
+    public List<CGenericWeapon> _WeapondList = new List<CGenericWeapon>();
     [SerializeField] private GameObject _WeapondObject;
     [SerializeField] private Transform _transformWeapondManager;
     public static CManagerWeapond Inst
@@ -61,4 +61,6 @@ public class CManagerWeapond : MonoBehaviour
         CGenericWeapon newWeapon = obj.GetComponent<CMiniMiniGun>();
         _WeapondList.Add(newWeapon);
     }
+
+   
 }

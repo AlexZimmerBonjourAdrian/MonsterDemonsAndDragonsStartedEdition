@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CGameManager : MonoBehaviour
 {
     public CPlayerManager[] _player;
+    [SerializeField]public Transform _transformSpawnWeapond;
     public static CGameManager Inst
     {
         get
@@ -45,9 +46,13 @@ public class CGameManager : MonoBehaviour
     {
 
         //Debug.Log(IsLoadingScene());
-        if(Input.GetKeyDown(KeyCode.Tab))
+       /* if(Input.GetKeyDown(KeyCode.Tab))
         {
             spawnPlayer();
+        }*/
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            CManagerWeapond.Inst.SpawnWeapond(_transformSpawnWeapond.position);
         }
 
     }

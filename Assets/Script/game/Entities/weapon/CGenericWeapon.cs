@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
-public class CGenericWeapon : MonoBehaviour
+
+public  abstract class CGenericWeapon : MonoBehaviour
 {
    public string Name;
 
@@ -22,8 +22,13 @@ public class CGenericWeapon : MonoBehaviour
         set { Num = value; }
     }
         */
-    
+
     //private Rigidbody2D _rigidbody;
 
+    public abstract string GetName();
+
+
+    public abstract int getNum();
+   
 
 }
