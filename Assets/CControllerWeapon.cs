@@ -13,8 +13,8 @@ public class CControllerWeapon : MonoBehaviour
     //public CGenericWeapon _GenericWeapond;
  //   public List<CGenericWeapon> _PlayerWeapondList = CManagerWeapond.Inst._WeapondList;
     public List<CGenericWeapon> _ListWeapond= new List<CGenericWeapon>();
-    public List<CGenericWeapon> _ListWeapondLoop = new List<CGenericWeapon>();
-    public List<CGenericWeapon> _ListWeapondNatalia = new List<CGenericWeapon>();
+    //public List<CGenericWeapon> _ListWeapondLoop = new List<CGenericWeapon>();
+   // public List<CGenericWeapon> _ListWeapondNatalia = new List<CGenericWeapon>();
     public List<CGenericWeapon> _ListPlayGolder = new List<CGenericWeapon>();
     //ublic CManagerWeapond _WeapondManager;
     public static CControllerWeapon Inst
@@ -43,65 +43,106 @@ public class CControllerWeapon : MonoBehaviour
        // _PlayerLoop = new GameObject[5];
     }
 
+    private void Update()
+    {
+        /*
+        for(int i = _ListPlayGolder.Count - 1; i >= 0; i--) 
+        {
+            if (_ListPlayGolder[i] == null)
+                _ListPlayGolder.RemoveAt(i);
+        }
+        */
+    }
     public void addListWeapond(CGenericWeapon _object)
     {
-        _ListWeapond.Add(_object);
-        
-        //PlayHolder lOGIC
-        /*
-        for(int i=_PlayerWeapondList.Count - 1; i <=0;i--)
-        {
-         if(_PlayerWeapondList[i].GetName() == "Loop")
-         {
-                switch (_PlayerWeapondList[i].getNum())
-                {
-                    case 1:
+        Debug.Log("Tomo una arma Armas");
+        // _ListWeapond.Add(_object);
+        CGenericWeapon Ref = _object;
+       // _ListPlayGolder.Add(Ref);
+        CGenericWeapon _weapond;
+        _ListPlayGolder.Add(Ref);
 
+
+        for (int i =0; i <= _ListPlayGolder.Count-1; i++)
+        {
+            Debug.Log(_ListPlayGolder[i].getNum());
+            switch (_ListPlayGolder[i].getNum())
+            {
+                
+                case 1:
+                    _weapond= Ref.GetComponent<CMiniMiniGun>();
+                    Debug.Log("Tengo La Minigun");
+                    //PrintArrayArmas();
                     break;
-                }
+                case 2:
+                    _weapond = Ref.GetComponent<CPistolM1911>();
+                   // PrintArrayArmas();
+                    break;
+                default:
+                    Debug.Log("Esta arma no existe");
+                    break;
+            }
 
-         }
-        }*/
-
-        for (int i = _ListWeapond.Count - 1; i <= 0; i--)
-        {
-            _ListPlayGolder.Add(_ListWeapond[i]);
-
-
-
-            Debug.Log(_ListPlayGolder[i].name);
-         //   RemoveAndOrdenate(_ListWeapond);
         }
 
-        
-        /*
-
-        for(int i = _ListWeapond.Count-1; i<=0;i--)
-        {
-
-            if(_ListWeapond[i].GetName() == "Loop")
+            #region PrototypeLogic
+            //PlayHolder lOGIC
+            /*
+            for(int i=_PlayerWeapondList.Count - 1; i <=0;i--)
             {
-                   for(i=_ListWeapondLoop.Count-1; i < 0; i--)
-                {
-                    _ListWeapondLoop.Add(_ListWeapond[i]);
-                }
-                RemoveAndOrdenate(_ListWeapondLoop);
-            }
-            else if(_ListWeapond[i].GetName() == "Natalia")
+             if(_PlayerWeapondList[i].GetName() == "Loop")
+             {
+                    switch (_PlayerWeapondList[i].getNum())
+                    {
+                        case 1:
+
+                        break;
+                    }
+
+             }
+            }*/
+            /*
+
+            for (int i = _ListWeapond.Count - 1; i <= 0; i--)
             {
-                for(i = _ListWeapondNatalia.Count - 1; i < 0; i--)
-                {
-                    _ListWeapondNatalia.Add(_ListWeapond[i]);
-                }
-                RemoveAndOrdenate(_ListWeapondNatalia);
-                
+                _ListPlayGolder.Add(_ListWeapond[i]);
+
+
+
+                Debug.Log(_ListPlayGolder[i].name);
+             //   RemoveAndOrdenate(_ListWeapond);
             }
-            _ListWeapond.Clear();
             */
 
+            /*
 
+            for(int i = _ListWeapond.Count-1; i<=0;i--)
+            {
 
-}
+                if(_ListWeapond[i].GetName() == "Loop")
+                {
+                       for(i=_ListWeapondLoop.Count-1; i < 0; i--)
+                    {
+                        _ListWeapondLoop.Add(_ListWeapond[i]);
+                    }
+                    RemoveAndOrdenate(_ListWeapondLoop);
+                }
+                else if(_ListWeapond[i].GetName() == "Natalia")
+                {
+                    for(i = _ListWeapondNatalia.Count - 1; i < 0; i--)
+                    {
+                        _ListWeapondNatalia.Add(_ListWeapond[i]);
+                    }
+                    RemoveAndOrdenate(_ListWeapondNatalia);
+
+                }
+                _ListWeapond.Clear();
+                */
+
+            #endregion
+
+        }
+    /*
     private void RemoveAndOrdenate(List<CGenericWeapon> _wep)
     {
         for (int i = 0; i <= _wep.Count - 1; i++)
@@ -119,10 +160,17 @@ public class CControllerWeapon : MonoBehaviour
 
 
     }
+    */
     //CManagerWeapond.Inst._WeapondList
 
 
-
+    private void PrintArrayArmas()
+    {
+        for(int i = _ListPlayGolder.Count -1;i<=0;i--)
+        {
+            Debug.Log(_ListPlayGolder[i].name);
+        }
+    }
 
 
 

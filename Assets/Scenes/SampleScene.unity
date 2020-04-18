@@ -20698,8 +20698,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ListWeapond: []
-  _ListWeapondLoop: []
-  _ListWeapondNatalia: []
   _ListPlayGolder: []
 --- !u!1001 &415110454246547984
 PrefabInstance:
