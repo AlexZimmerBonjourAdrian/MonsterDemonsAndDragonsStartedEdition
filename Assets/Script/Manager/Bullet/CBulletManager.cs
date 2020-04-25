@@ -7,7 +7,7 @@ using UnityEngine.SocialPlatforms;
 
 public class CBulletManager : CGenericBullet
 {
-    private ArrayList _bulletList=new ArrayList();
+    private List<CGenericBullet> _bulletList=new List<CGenericBullet>();
     [SerializeField]private GameObject _bulletAsset;
   
     
@@ -121,6 +121,43 @@ public class CBulletManager : CGenericBullet
     
     }
     */
+    
+    /*
+    private CGenericBullet SelectTypeBullet(CGenericWeapon Weapond)
+    {
+        //Todo: en este caso se podria hacer lo siguiente
+            //Se tiene que ver la manera de crear ballas para cada arma sabiendo que arma se te da
+             // En este caso Puedo Crear el Objecto
+             //le paso el arma, me comprueba cual es y luego me Crea la bala me la agrega y me agrega la logica de movimiento especifica
+
+        switch (Weapond.getNum())
+        {
+            case 1:
+
+
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+
+                break;
+
+        }
+        
+    }
+    */
 public void Spawn(Vector2 pos, Vector2 vel,float Rot)
     {
 
@@ -163,6 +200,13 @@ public void Spawn(Vector2 pos, Vector2 vel,float Rot)
         newBullet.AddVel(vel);
         _bulletList.Add(newBullet);
         */
+        //Revisar esta logica para usarla despues tendre que usarla en la parte superior
+        //Recordar crear la bala asignale la fisica 
+        // y luego agregarla esta parte podria quedar en desuso 
+        //o podria separarlo de la siguiente manera
+        //averiguar si la logica de las armas puede ser ejecutada una vez a la hora de ser disparada pero lo dudo
+        //Tratar de Proligear esta parte del codigo 
+        //TODO: Averiguar que hacer con el bean sniper como solucionar eso
         #region Tengo que investigar como usar esto para rotarlo en 7 direcciones
         GameObject obj = (GameObject)Instantiate(_bulletAsset, pos, Quaternion.identity);
         Vector3 localScale=obj.transform.localScale;
@@ -175,7 +219,11 @@ public void Spawn(Vector2 pos, Vector2 vel,float Rot)
 
 
     }
-
+    public List<CGenericBullet> GetList()
+    {
+     
+        return _bulletList;
+    }
 }
 
 

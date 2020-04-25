@@ -8,6 +8,7 @@ public class CManagerWeapond : MonoBehaviour
     public List<CGenericWeapon> _WeapondList = new List<CGenericWeapon>();
     [SerializeField] private GameObject _WeapondObject;
     [SerializeField] private Transform _transformWeapondManager;
+    [SerializeField] private List<Transform> _transformList;
     public static CManagerWeapond Inst
     {
         get
@@ -52,7 +53,6 @@ public class CManagerWeapond : MonoBehaviour
         }
 
         #endregion
-
     }
 
     public void SpawnWeapond(Vector2 pos)

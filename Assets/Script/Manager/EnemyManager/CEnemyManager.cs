@@ -22,6 +22,8 @@ public class CEnemyManager : MonoBehaviour
     private ArrayList _EnemyList = new ArrayList();
     [SerializeField] private GameObject _EnemyAsset;
 
+    //[SerializeField] private List<Transform> _SpawnEnemy;
+    
     // Start is called before the first frame update
 
     public void Awake()

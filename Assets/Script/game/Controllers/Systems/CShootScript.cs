@@ -10,6 +10,7 @@ public class CShootScript : MonoBehaviour
     private float _vel= 40f;
     private float _rote=1;
     private int _SelectWeapond=1;
+    private Vector2 _SpawnShooterDir;
     private void Start()
     {
         _controller = GetComponent<CharacterController2D>();
@@ -35,11 +36,7 @@ public class CShootScript : MonoBehaviour
 
         if(Input.GetKey(KeyCode.X))
         {
-           
-                CBulletManager.Inst.Spawn(_positionShoot.position, Vector2.right * _vel,_rote);
-
-
-            
+                CBulletManager.Inst.Spawn(_positionShoot.position, _SpawnShooterDir,_rote);
         }
         Debug.Log(_rote);
         
@@ -50,10 +47,12 @@ public class CShootScript : MonoBehaviour
        if(_controller.getFlip().x > 0)
         {
             _rote = 1;
+            _SpawnShooterDir = Vector3.right * _vel;
         }
        else if(_controller.getFlip().x<0)
         {
             _rote = -1;
+            _SpawnShooterDir = Vector3.right * -_vel;
         } 
     }
  

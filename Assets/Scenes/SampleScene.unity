@@ -332,7 +332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &340529313
 Transform:
   m_ObjectHideFlags: 0
@@ -1435,7 +1435,7 @@ GameObject:
   - component: {fileID: 779638475}
   m_Layer: 10
   m_Name: Spawn
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20619,6 +20619,7 @@ MonoBehaviour:
   _WeapondObject: {fileID: 4187609141692825805, guid: c62714397f6801741b307f7ee64f4aed,
     type: 3}
   _transformWeapondManager: {fileID: 538102449}
+  _transformList: []
 --- !u!114 &329950669644636178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20699,6 +20700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ListWeapond: []
   _ListPlayGolder: []
+  _BulletAssets: []
 --- !u!1001 &415110454246547984
 PrefabInstance:
   m_ObjectHideFlags: 0

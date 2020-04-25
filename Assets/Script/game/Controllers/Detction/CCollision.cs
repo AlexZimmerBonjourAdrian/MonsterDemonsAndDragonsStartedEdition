@@ -8,8 +8,8 @@ public class CCollision : MonoBehaviour
     public static int ACTIONSTATE_HOVE = 1;
     public static int ACTIONSTATE_INTERACT = 2;
     private int _actionState;
-    public float WEIDTH_BOX = 12f;
-    public float HEIGTH_BOX = 14f;
+    [SerializeField] private  float WEIDTH_BOX = 12f;
+    [SerializeField] private float HEIGTH_BOX = 14f;
     GameObject anyObject;
     private Component _actionObj;
     // Start is called before the first frame update
