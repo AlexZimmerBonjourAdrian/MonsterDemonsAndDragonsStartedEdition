@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CM1GaratBullet :CBullet
+public class CM1GaratBullet :CGenericBullet
 {
     // Start is called before the first frame update
 
     float _damage;
     float _TimeToDie;
     float _GravityFoce;
-    Vector2 _velMove;
+    //Vector2 _velMove;
     private void Awake()
     {
         
@@ -43,12 +43,13 @@ public class CM1GaratBullet :CBullet
        
         
     }
+    /*
     public override void setVel(Vector2 vel)
     {
         base.setVel(vel);
         _velMove = vel;
     }
-
+    */
 
     public float getDamage()
     {

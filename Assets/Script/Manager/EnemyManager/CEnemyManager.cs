@@ -50,12 +50,12 @@ public class CEnemyManager : MonoBehaviour
         }
 
     }
-    /*
+    
     public void Spawn(Vector2 pos)
     {
         GameObject obj = (GameObject)Instantiate(_EnemyAsset, pos, Quaternion.identity);
-        CEnemyGeneric newEnemy = obj.GetComponent<>();
+        CEnemyGeneric newEnemy = obj.GetComponent<CEnemy>();
         _EnemyList.Add(newEnemy);
     }
-    */
+    
 }

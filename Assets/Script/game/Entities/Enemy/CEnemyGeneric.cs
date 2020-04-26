@@ -7,13 +7,22 @@ public class CEnemyGeneric : MonoBehaviour, ICollision
     // Start is called before the first frame update
     protected float life;
     protected float Damage;
-
+   
     // protected float 
     public void OnCollision()
     {
-        List<CGenericBullet> var = CBulletManager.Inst.GetList();  
+        List<CGenericBullet> var = CBulletManager.Inst.GetList();
+        for(int i = var.Count-1;  i <= 0; i--)
+        {
+            // var[i].get
+            var[i].getDamage();
+        }
+
+       
         
     }
+    //Hay que ver que hacer con el tema de raycasting
+    //Todo esto Lo voy a dejar pronto
 
     public virtual void setLife(float life)
     {
@@ -58,4 +67,14 @@ public class CEnemyGeneric : MonoBehaviour, ICollision
 
 
     }
+    /*
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Bullet")
+        {
+
+        }
+    }
+    */
+    
 }

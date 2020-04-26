@@ -69,7 +69,7 @@ public class CBulletManager : CGenericBullet
         //_bulletList = new List<CBullet>();
     }
 
-    void Update()
+    public void Update()
     {
         /*
         

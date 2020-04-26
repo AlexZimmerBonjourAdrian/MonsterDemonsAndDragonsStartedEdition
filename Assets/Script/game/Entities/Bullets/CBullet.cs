@@ -7,20 +7,15 @@ using UnityEngine.Assertions.Must;
 
 public class CBullet : CGenericBullet
 {
-    
-    [SerializeField] private Rigidbody2D _rigidbody;
-    [SerializeField] private LayerMask _WhatIsCheck;
-    public static int ACTIONSTATE_NONE = 0;
-    public static int ACTIONSTATE_HOVE = 1;
-    public static int ACTIONSTATE_INTERACT = 2;
-    private int _actionState;
-    [SerializeField]private float WEIDTH_BOX = 0.2f;
-    [SerializeField] private float HEIGTH_BOX = 0.2f;
-    GameObject anyObject;
-    private Component _actionObj;
-    [SerializeField] private float Damaged = 10f;
-    [SerializeField] private float TTL = .5f;
 
+    //[SerializeField] private float TTL = .5f;
+    private  CBullet()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>();
+        WEIDTH_BOX = 0.2f;
+        HEIGTH_BOX = 0.2f;
+        
+    }
     /*[SerializeField]enum WeaponSelect
     {
         Pistol,ShootGun,MachineGun,Sniper,RocketLouncher
@@ -77,12 +72,14 @@ public class CBullet : CGenericBullet
 
      }
      */
-    void start()
-    {
+    /*
+   void start()
+   {
 
-        _rigidbody = GetComponent<Rigidbody2D>();
-    }
-
+       //_rigidbody = GetComponent<Rigidbody2D>();
+   }
+   */
+    /*
 
     public virtual void setVel(Vector2 vel)
     {
@@ -116,7 +113,7 @@ public class CBullet : CGenericBullet
 
     }
     
-    
+    */
     /*
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -136,19 +133,21 @@ public class CBullet : CGenericBullet
     }
     */
 
-
-    private void FixedUpdate()
+    /*
+private void FixedUpdate()
+{
+    Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f, _WhatIsCheck);
+    for (int i = 0; i < colliders.Length; i++)
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f, _WhatIsCheck);
-        for (int i = 0; i < colliders.Length; i++)
+        if (colliders[i].gameObject != gameObject)
         {
-            if (colliders[i].gameObject != gameObject)
-            {
-                Destroy(gameObject);
-            }
-
+            Destroy(gameObject);
         }
+
     }
+}
+*/
+    /*
     private void Update()
     {
         
@@ -196,6 +195,8 @@ public class CBullet : CGenericBullet
         }
     
     }
+    */
+    /*
     private GameObject CollisionObject()
     {
         Vector2 size = new Vector2(WEIDTH_BOX, HEIGTH_BOX);
@@ -210,16 +211,88 @@ public class CBullet : CGenericBullet
         }
         return anyObject;
     }
+
+  
+    
+    
+    */
+    void  Update()
+    {
+        base.Update(); 
+
+    }
+    /*
+    public virtual void setVel(Vector2 vel)
+    {
+        //_rigidbody.AddForce(vel,ForceMode2D.Impulse);
+    }
+    */
+    /*
+    public override void setDamage(float Damage)
+    {
+        base.setDamage(Damage);
+    }
+    */
+    /*
+    public virtual void setGravity(float gravity)
+    {
+
+    }
+    */
+
+    public override void setTimeToLife(float TTLife)
+    {
+        base.setTimeToLife(TTLife);
+    }
+    public override float GetTimeToLiFe()
+    {
+        //base.GetTimeToLiFe();
+        TTL = TTL * Time.deltaTime;
+        return this.TTL;
+    }
+
+    public override GameObject CollisionObject()
+    {
+        //base.CollisionObject();
+        Vector2 size = new Vector2(WEIDTH_BOX, HEIGTH_BOX);
+        Collider2D[] collisions = Physics2D.OverlapBoxAll(transform.position, size, 0);
+        for (int i = 0; i < collisions.Length; i++)
+        {
+            if (collisions[i].gameObject != gameObject)
+            {
+                anyObject = collisions[i].gameObject;
+                return anyObject.gameObject;
+            }
+        }
+        return anyObject;
+    }
+    private void FixedUpdate()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f, _WhatIsCheck);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != gameObject)
+            {
+                Destroy(gameObject);
+            }
+
+        }
+    }
+
+    public override void AddVel(Vector3 vel)
+    {
+        base.AddVel(vel);
+    }
+    public  float GetDamage()
+    {
+        
+        return Damaged;
+    }
+    
     private void OnDrawGizmos()
     {
         Vector3 size = new Vector3(WEIDTH_BOX, HEIGTH_BOX, 0f);
         Gizmos.color = Color.blue;
         Gizmos.DrawCube(gameObject.transform.position, size);
     }
-
-    public float getDamage()
-    {
-        return Damaged;
-    }
-
 }
