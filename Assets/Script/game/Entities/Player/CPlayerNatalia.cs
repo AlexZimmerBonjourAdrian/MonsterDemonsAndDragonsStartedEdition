@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CPlayerNatalia : CPlayer
+public class CPlayerNatalia : PlayerMovement
 {
     public CharacterController2D controller;
     public Animator animator;

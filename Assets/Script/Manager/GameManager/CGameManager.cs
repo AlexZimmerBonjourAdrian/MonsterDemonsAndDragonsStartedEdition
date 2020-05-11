@@ -56,6 +56,7 @@ public class CGameManager : MonoBehaviour
         }
 
     }
+    /*
     private void spawnPlayer()
     {
         
@@ -77,6 +78,7 @@ public class CGameManager : MonoBehaviour
          }
          
     }
+    */
     #region ControlDeEcenarios
     public void LateUpdate()
     {

@@ -293,6 +293,6 @@ private void FixedUpdate()
     {
         Vector3 size = new Vector3(WEIDTH_BOX, HEIGTH_BOX, 0f);
         Gizmos.color = Color.blue;
-        Gizmos.DrawCube(gameObject.transform.position, size);
+        Gizmos.DrawWireCube(gameObject.transform.position, size);
     }
 }

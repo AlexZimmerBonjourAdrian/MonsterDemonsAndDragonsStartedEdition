@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CHam :CFood
+public class CHam :CGenericItem
 {
+    protected override void Start()
+    {
+        base.Start();
+    }
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {

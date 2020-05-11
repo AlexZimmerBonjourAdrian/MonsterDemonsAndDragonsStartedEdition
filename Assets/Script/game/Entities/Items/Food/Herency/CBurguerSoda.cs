@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CBurguerSoda : CFood
+public class CBurguerSoda : CGenericItem
 {
+    protected override void Start()
+    {
+        base.Start();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")

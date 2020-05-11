@@ -87,6 +87,8 @@
     <Compile Include="Assets\Script\Manager\itemsManager\CItemsManager.cs" />
     <Compile Include="Assets\Script\PlayHolder\CCharacterMuffet.cs" />
     <Compile Include="Assets\Script\PlayHolder\CGenericCharacter.cs" />
+    <Compile Include="Assets\Script\ScriptableObject\CEnemyData.cs" />
+    <Compile Include="Assets\Script\ScriptableObject\CItemData.cs" />
     <Compile Include="Assets\Script\Switch\CSwitch.cs" />
     <Compile Include="Assets\Script\game\Controllers\Detction\CCollision.cs" />
     <Compile Include="Assets\Script\game\Controllers\Detction\CRaycasting.cs" />
@@ -179,6 +181,8 @@
     <Compile Include="Assets\Script\game\Entities\weapon\Special\Loop\CLatigo.cs" />
     <Compile Include="Assets\Script\game\Entities\weapon\Special\Natailia\CClaws.cs" />
     <Compile Include="Assets\Script\game\State\CTestLevelState.cs" />
+    <Compile Include="Assets\Script\game\State\Enemy\CEIdleState.cs" />
+    <Compile Include="Assets\Script\game\State\Enemy\CState.cs" />
     <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\readme.txt" />
     <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\environment\tiles\readme guides IMPORTANT.txt" />
     <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\license cc0 - public domain.txt" />

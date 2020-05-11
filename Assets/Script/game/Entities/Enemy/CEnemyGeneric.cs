@@ -1,13 +1,35 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CEnemyGeneric : MonoBehaviour, ICollision
 {
     // Start is called before the first frame update
-    protected float life;
+    [SerializeField]
+    protected CEnemyData Enemy;
+     protected new string name;
+    protected string descripcion;
+    protected float Health;
+    protected float SpeedMovement;
     protected float Damage;
-   
+    protected float invulnerabilitytime;
+    protected float DamageMelee;
+    protected float DelayChangeState;
+    protected bool IsDistance;
+
+    protected virtual void Start()
+    {
+        name = Enemy.name;
+        descripcion = Enemy.descripcion;
+        Health = Enemy.Health;
+        SpeedMovement = Enemy.SpeedMovement;
+        Damage = Enemy.Damage;
+        invulnerabilitytime = Enemy.invulnerabilitytime;
+        DamageMelee = Enemy.DamageMelee;
+        DelayChangeState = Enemy.DelayChangeState;
+        IsDistance = Enemy.IsDistance;
+    }
     // protected float 
     public void OnCollision()
     {
@@ -26,12 +48,12 @@ public class CEnemyGeneric : MonoBehaviour, ICollision
 
     public virtual void setLife(float life)
     {
-        this.life = life;
+        this.Health = life;
     }
 
     public virtual float getLife()
     {
-        return this.life;
+        return this.Health;
     }
 
     public virtual void setDamage(float damage)

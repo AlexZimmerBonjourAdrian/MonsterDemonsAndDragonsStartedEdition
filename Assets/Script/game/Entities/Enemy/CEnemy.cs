@@ -18,12 +18,15 @@ public abstract class CEnemy : CEnemyGeneric
     //public Animator animator;
    
     // Start is called before the first frame update
-    void Start()
+   
+    protected override void Start()
     {
+        base.Start();
         currentHealth = maxHealth;
+
     }
 
-   
+
     // Update is called once per frame
     public abstract void setState(int aState);
 

@@ -143,3 +143,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1387b27e28079374c81974531f1e12fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: a88f138652de228439fe3d99450f0b02, type: 2}
+  nameText: 
+  descriptionText: 
+  healthRecover: 0
+  delayRegen: 0
+  regenerateTime: 0
+  invulnerabilitytime: 0
+  damageMultiply: 0

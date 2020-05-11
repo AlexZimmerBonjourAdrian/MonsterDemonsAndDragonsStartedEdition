@@ -2,14 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CSoulLook : CEnemy, Iinteractive
+public class CSoulLook : CEnemyGeneric, Iinteractive
 {
     private CPlayer Player;
     public void OnInteractive()
     {
         
     }
+    protected override void Start()
+    {
+        base.Start();
+
+    }
     // Start is called before the first frame update
+    /*
     void start()
     {
         Player = GetComponent<CPlayer>();
@@ -58,4 +64,5 @@ public class CSoulLook : CEnemy, Iinteractive
     {
         
     }
+    */
 }
