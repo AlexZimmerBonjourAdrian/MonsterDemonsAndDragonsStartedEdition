@@ -12,10 +12,12 @@ public class CEnemyData : ScriptableObject
     public string descripcion;
     public float Health;
     public float SpeedMovement;
+    [Range(0f, 340f)]
     public float Damage;
     public float invulnerabilitytime;
     public float DamageMelee;
     public float DelayChangeState;
+    //Esto es para saber si ataca a distancia, esta variable si es true si usara los ataques a distancia 
     public bool IsDistance;
   
  

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CShield : CUsed
+public class CShield : CGenericItem
 {
     // Start is called before the first frame update
-    void Start()
+     void Start()
     {
         
     }
@@ -14,5 +14,10 @@ public class CShield : CUsed
     void Update()
     {
         
+    }
+    protected override void OnCollisionEnter2D(Collision2D collision)
+    {
+        base.OnCollisionEnter2D(collision);
+
     }
 }

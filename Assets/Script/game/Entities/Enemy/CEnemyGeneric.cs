@@ -31,16 +31,15 @@ public class CEnemyGeneric : MonoBehaviour, ICollision
         IsDistance = Enemy.IsDistance;
     }
     // protected float 
-    public void OnCollision()
+    public virtual void OnCollision()
     {
         List<CGenericBullet> var = CBulletManager.Inst.GetList();
         for(int i = var.Count-1;  i <= 0; i--)
         {
             // var[i].get
-            var[i].getDamage();
+            setLife(var[i].getDamage() - getLife());
+            
         }
-
-       
         
     }
     //Hay que ver que hacer con el tema de raycasting

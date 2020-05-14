@@ -250,7 +250,7 @@ private void FixedUpdate()
         TTL = TTL * Time.deltaTime;
         return this.TTL;
     }
-
+    /*
     public override GameObject CollisionObject()
     {
         //base.CollisionObject();
@@ -266,6 +266,7 @@ private void FixedUpdate()
         }
         return anyObject;
     }
+    */
     private void FixedUpdate()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f, _WhatIsCheck);

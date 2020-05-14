@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CBomb : CUsed
+public class CBomb : CGenericItem
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,10 @@ public class CBomb : CUsed
     void Update()
     {
         
+    }
+    protected override void OnCollisionEnter2D(Collision2D collision)
+    {
+        base.OnCollisionEnter2D(collision);
+
     }
 }

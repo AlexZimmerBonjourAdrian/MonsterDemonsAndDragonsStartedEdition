@@ -22,11 +22,8 @@ public class CShootGunHAMMER : CGenericWeapon
     }
 
     // Update is called once per frame
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected override void OnCollisionEnter2D(Collision2D collision)
     {
-       if(collision.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
-        }
+        base.OnCollisionEnter2D(collision);
     }
 }

@@ -14,13 +14,31 @@ public class CGenericBullet :MonoBehaviour
     [SerializeField] protected float WEIDTH_BOX = 0.2f;
     [SerializeField] protected float HEIGTH_BOX = 0.2f;
     protected int _actionState;
-    [SerializeField] protected float Damaged = 10f;
+    [SerializeField] protected float Damaged;
     protected GameObject anyObject;
     protected Component _actionObj;
     protected float TTL;
-    public void Update()
-    {
+    
+    protected CBulletData Bullet;
+    protected new string name;
+    [TextArea(10, 10)]
+    protected string descripcion;
+    //public float damage;
+    [Range(0f, 1000f)]
+    protected float speed;
 
+    protected virtual void Start()
+    {
+        name = Bullet.name;
+        descripcion = Bullet.descripcion;
+        speed = Bullet.speed;
+        Damaged = Bullet.damage;
+
+    }
+    public virtual void Update()
+
+    {
+        /*
         if (_actionState == ACTIONSTATE_NONE)
         {
             GameObject obj = CollisionObject();
@@ -63,8 +81,9 @@ public class CGenericBullet :MonoBehaviour
             _actionState = ACTIONSTATE_NONE;
             _actionObj = null;
         }
-
+        */
     }
+    /*
   public virtual GameObject CollisionObject()
     {
         Vector2 size = new Vector2(WEIDTH_BOX, HEIGTH_BOX);
@@ -79,7 +98,8 @@ public class CGenericBullet :MonoBehaviour
         }
         return anyObject;
     }
-    private void Awake()
+    */
+    protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -88,7 +108,7 @@ public class CGenericBullet :MonoBehaviour
     {
         _rigidbody.AddForce(vel, ForceMode2D.Impulse);
     }
-    public float getDamage()
+    public virtual float getDamage()
     {
         return Damaged;
     }
@@ -96,11 +116,13 @@ public class CGenericBullet :MonoBehaviour
     {
         this.Damaged = Damage;
     }
-
+    /*
     public virtual void setGravity(float gravity)
     {
 
     }
+    */
+    
 
     public virtual void setTimeToLife(float TTLife)
     {
@@ -118,4 +140,20 @@ public class CGenericBullet :MonoBehaviour
          _velMove = vel;
     }
     */
+    
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject != gameObject)
+        {
+            Debug.Log("Ignorame");
+        }
+        else if (collision.gameObject.tag == "Enemy")
+        {
+            //Funcion ejecucion de particululas o effectos.
+            Debug.Log("Se Dstrullo La Balla");
+            DestroyImmediate(this);
+        }
+
+    }
+    
 }

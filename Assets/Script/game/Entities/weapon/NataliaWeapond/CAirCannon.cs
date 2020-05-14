@@ -18,12 +18,9 @@ public class CAirCannon : CGenericWeapon
     {
         return Num;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
-        }
+        base.OnCollisionEnter2D(collision);
     }
 
 }

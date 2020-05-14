@@ -35,4 +35,19 @@ public class CGenericItem : MonoBehaviour
         damageMultiply = item.damageMultiply;
 
     }
+
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject != gameObject)
+        {
+            Debug.Log("Ignorame");
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
+            //Funcion ejecucion de particululas o effectos.
+            Debug.Log("Se Dstrullo La Balla");
+            Destroy(this);
+        }
+
+    }
 }

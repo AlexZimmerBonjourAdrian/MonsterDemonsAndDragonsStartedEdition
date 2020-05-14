@@ -10,6 +10,10 @@ public class CRifleGarad : CGenericWeapon
         Name = "Loop";
         Num = 2;
     }
+    public override void Start()
+    {
+        base.Start();
+    }
     public override string GetName()
     {
         return Name;
@@ -18,11 +22,8 @@ public class CRifleGarad : CGenericWeapon
     {
         return Num;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag== "Player")
-        {
-            Destroy(gameObject);
-        }
+        base.OnCollisionEnter2D(collision);
     }
 }

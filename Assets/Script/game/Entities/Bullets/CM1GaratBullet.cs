@@ -6,82 +6,48 @@ public class CM1GaratBullet :CGenericBullet
 {
     // Start is called before the first frame update
 
-    float _damage;
-    float _TimeToDie;
-    float _GravityFoce;
-    //Vector2 _velMove;
-    private void Awake()
+    protected override void Awake()
     {
-        
-    }
-    private void Start()
-    {
-
-        
+        base.Awake();
     }
 
-    public void Update()
+    public override void AddVel(Vector3 vel)
     {
-       
+        _rigidbody.AddForce(vel, ForceMode2D.Impulse);
     }
-    public override void setTimeToLife(float Tlife)
+    public override float getDamage()
     {
-        base.setTimeToLife(Tlife);
-        _TimeToDie = Tlife;
-
-    }
-    public override void setGravity(float gravity)
-    {
-        base.setGravity(gravity);
-        _GravityFoce = gravity;
+        return base.getDamage();
     }
     public override void setDamage(float Damage)
     {
         base.setDamage(Damage);
-        _damage = Damage;
-       
-       
-        
     }
     /*
-    public override void setVel(Vector2 vel)
+    public override void setGravity(float gravity)
     {
-        base.setVel(vel);
-        _velMove = vel;
+        base.setGravity(gravity);
     }
     */
 
-    public float getDamage()
+    public override void setTimeToLife(float TTLife)
     {
-        return _damage;
+        base.setTimeToLife(TTLife);
     }
-    
-    public float getGravity()
+    public override float GetTimeToLiFe()
     {
-        return _GravityFoce;
+        return base.GetTimeToLiFe();
     }
-    public float getTimeIsLife()
+   protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        return _TimeToDie;
+        base.OnCollisionEnter2D(collision);
+
     }
 
 
 
 
-   
-    private void OnCollisionEnter2D(Collision2D collision)
-      {
-        if(collision.gameObject != gameObject)
-        {
-            Debug.Log("Ignorame");
-        }
-        else if(collision.gameObject.tag == "Enemy")
-        {
-            //Funcion ejecucion de particululas o effectos.
-            Debug.Log("Se Dstrullo La Balla");
-            DestroyImmediate(this);
-        }
-        
-      }
+
+
 
 }

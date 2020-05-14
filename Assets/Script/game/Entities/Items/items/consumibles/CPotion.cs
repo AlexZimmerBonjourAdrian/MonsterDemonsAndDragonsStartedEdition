@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CPotion : CUsed
+public class CPotion : CGenericItem
 {
 
     // Start is called before the first frame update
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
-        }
+        base.OnCollisionEnter2D(collision);
+
     }
 }
