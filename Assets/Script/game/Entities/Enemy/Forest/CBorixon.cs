@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CBorixon : CEnemy
+public class CBorixon : CEnemyGeneric
 {
+    /*
     // Start is called before the first frame update
     public override void Die()
     {
@@ -27,7 +28,7 @@ public class CBorixon : CEnemy
     {
         throw new System.NotImplementedException();
     }
-
+    
     void Start()
     {
         
@@ -38,4 +39,5 @@ public class CBorixon : CEnemy
     {
         
     }
+    */
 }

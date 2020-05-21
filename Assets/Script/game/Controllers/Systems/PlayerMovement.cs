@@ -13,11 +13,13 @@ public class PlayerMovement : MonoBehaviour {
 	float horizontalMove = 0f;
 	bool jump = true;
 	bool crouch = false;
+	/*
 	private const int STAND_STATE= 0;
 	private const int RUN_STATE= 1;
 	private const int JUMP_STATE = 2;
 	private const int DASH_STATE = 3;
-	private int _state = 0;
+	*/
+	//private int _state = 0;
 	private int _rote=0;
 	//private ControllerWeapond  
 

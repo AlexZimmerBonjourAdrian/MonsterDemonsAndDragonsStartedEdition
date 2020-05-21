@@ -212,7 +212,7 @@ public void Spawn(Vector2 pos, Vector2 vel,float Rot)
         Vector3 localScale=obj.transform.localScale;
         localScale.x *= Rot;
         obj.transform.localScale = localScale;
-        CGenericBullet newBullet = obj.GetComponent<CBullet>();
+        CGenericBullet newBullet = obj.GetComponent<CM1GaratBullet>();
         newBullet.AddVel(vel);
         _bulletList.Add(newBullet);
         #endregion

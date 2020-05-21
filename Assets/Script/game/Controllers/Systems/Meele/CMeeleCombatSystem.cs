@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CMeeleCombatSystem : MonoBehaviour
 {
+    /*
     // Start is called before the first frame update
 
     //Cundo se tenga el sistema de animacion se usara esto;
@@ -56,5 +57,6 @@ public class CMeeleCombatSystem : MonoBehaviour
         Vector2 size = new Vector2(attackRange, HIGTH_BOX);
         Gizmos.DrawWireCube(attackPoint.position, size);
     }
+    */
 }
 

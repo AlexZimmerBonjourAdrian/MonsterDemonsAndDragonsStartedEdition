@@ -9,7 +9,7 @@ public class CShootScript : MonoBehaviour
     [SerializeField] private Transform _positionShoot;
     private float _vel= 40f;
     private float _rote=1;
-    private int _SelectWeapond=1;
+   // private int _SelectWeapond=1;
     private Vector2 _SpawnShooterDir;
     private void Start()
     {

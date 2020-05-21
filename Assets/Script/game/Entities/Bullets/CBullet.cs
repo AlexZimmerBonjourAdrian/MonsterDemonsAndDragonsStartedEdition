@@ -5,8 +5,9 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 
-public class CBullet : CGenericBullet
+public class CBullet :MonoBehaviour
 {
+    /*
 
     //[SerializeField] private float TTL = .5f;
     private  CBullet()
@@ -16,13 +17,13 @@ public class CBullet : CGenericBullet
         HEIGTH_BOX = 0.2f;
         
     }
-    /*[SerializeField]enum WeaponSelect
+    [SerializeField]enum WeaponSelect
     {
         Pistol,ShootGun,MachineGun,Sniper,RocketLouncher
     };
-    */
+    
 
-    /*
+    
        struct ChangeValuesToBullet
        {
            public float damage;
@@ -32,13 +33,13 @@ public class CBullet : CGenericBullet
            public bool SecondShoot;// este es tambien opcional//solo integrar cuando se tenga todo el tipo de disparo
 
        }
-       */
-    /*
+       
+    
     [SerializeField]private WeaponSelect WepSel;
-    */
+    
 
 
-    /*
+    
      void start ()
      {
 
@@ -71,15 +72,13 @@ public class CBullet : CGenericBullet
          return weap;
 
      }
-     */
-    /*
+  
    void start()
    {
 
        //_rigidbody = GetComponent<Rigidbody2D>();
    }
-   */
-    /*
+ 
 
     public virtual void setVel(Vector2 vel)
     {
@@ -113,8 +112,7 @@ public class CBullet : CGenericBullet
 
     }
     
-    */
-    /*
+   
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject != gameObject && collision.gameObject.tag !="Player")
@@ -122,8 +120,7 @@ public class CBullet : CGenericBullet
             Destroy(gameObject);
         }
     }
-    */
-    /*
+  
     //funcion de control de particulas o sprite 
     Collider2D[] colliders = Physics2D.OverlapCircleAll()
 
@@ -131,9 +128,9 @@ public class CBullet : CGenericBullet
     {
         
     }
-    */
+    
 
-    /*
+    
 private void FixedUpdate()
 {
     Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f, _WhatIsCheck);
@@ -146,8 +143,8 @@ private void FixedUpdate()
 
     }
 }
-*/
-    /*
+
+    
     private void Update()
     {
         
@@ -195,8 +192,8 @@ private void FixedUpdate()
         }
     
     }
-    */
-    /*
+    
+    
     private GameObject CollisionObject()
     {
         Vector2 size = new Vector2(WEIDTH_BOX, HEIGTH_BOX);
@@ -215,30 +212,29 @@ private void FixedUpdate()
   
     
     
-    */
+    
     void  Update()
     {
         base.Update(); 
 
     }
-    /*
+    
     public virtual void setVel(Vector2 vel)
     {
         //_rigidbody.AddForce(vel,ForceMode2D.Impulse);
     }
-    */
-    /*
+   
     public override void setDamage(float Damage)
     {
         base.setDamage(Damage);
     }
-    */
-    /*
+    
+    
     public virtual void setGravity(float gravity)
     {
 
     }
-    */
+    
 
     public override void setTimeToLife(float TTLife)
     {
@@ -250,7 +246,7 @@ private void FixedUpdate()
         TTL = TTL * Time.deltaTime;
         return this.TTL;
     }
-    /*
+    
     public override GameObject CollisionObject()
     {
         //base.CollisionObject();
@@ -266,7 +262,7 @@ private void FixedUpdate()
         }
         return anyObject;
     }
-    */
+    
     private void FixedUpdate()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f, _WhatIsCheck);
@@ -296,4 +292,5 @@ private void FixedUpdate()
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(gameObject.transform.position, size);
     }
+    */
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CMoveSystem : MonoBehaviour
 {
+    /*
     //====Cambiar de estados
     private bool _AirControl = true;
     private bool _Ground = false;
@@ -88,7 +89,6 @@ public class CMoveSystem : MonoBehaviour
 
             }
             
-            /*
             _Ground = true;
 
             if (colliders[i].gameObject != gameObject)
@@ -125,7 +125,7 @@ public class CMoveSystem : MonoBehaviour
                 Physics2D.IgnoreLayerCollision(playerLayer, 11, false);
 
             }
-            */
+            
         }
 
 
@@ -221,7 +221,7 @@ public class CMoveSystem : MonoBehaviour
             Gizmos.DrawWireSphere(_CeilingCheck.position, _GroundedRadius);
         }
         
-        /*
+        
     IEnumerator jumpOff()
     {
         jumpOffCoroutineIsRunning = true;
@@ -231,7 +231,7 @@ public class CMoveSystem : MonoBehaviour
         jumpOffCoroutineIsRunning = false;
 
     }
-    */
+    
     private bool getIsFlip()
     {
         return _FacingRight;
@@ -240,12 +240,12 @@ public class CMoveSystem : MonoBehaviour
 }
 
 
-    /*
+    
         private void Update()
         {
             Debug.Log(_Ground);
         }
-       /*
+       
         private void OnCollisionEnter2D(Collision2D gamecolision)
         {
             if(gamecolision.gameObject.tag == "Floor")
@@ -256,6 +256,7 @@ public class CMoveSystem : MonoBehaviour
             }
         }
         */
+}
  
 
 

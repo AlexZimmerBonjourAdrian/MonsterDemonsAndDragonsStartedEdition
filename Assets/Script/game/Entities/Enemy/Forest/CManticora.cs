@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CManticora : CEnemy
 {
+    /*
     // Start is called before the first frame update
     public override void Die()
     {
@@ -38,4 +39,5 @@ public class CManticora : CEnemy
     {
         
     }
+    */
 }

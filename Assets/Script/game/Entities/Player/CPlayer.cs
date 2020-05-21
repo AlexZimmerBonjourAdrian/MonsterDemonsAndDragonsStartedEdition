@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CPlayer : MonoBehaviour
 {
+    /*
    private CMoveSystem controller;
     [SerializeField]private float _Speed =200f;
      float horizontalMove = 3;
@@ -23,9 +24,9 @@ public class CPlayer : MonoBehaviour
     #endregion
 
     [SerializeField]private float _dashSpeed = 30f;
-    private float vel = 10f;
-    private int MaxHealth=3;
-    private int currentHealth = 3;
+    //private float vel = 10f;
+   // private int MaxHealth=3;
+   // private int currentHealth = 3;
     private Transform _positionShoot;
     
     
@@ -166,6 +167,6 @@ public class CPlayer : MonoBehaviour
     }
    
 
-
+    */
 
 }

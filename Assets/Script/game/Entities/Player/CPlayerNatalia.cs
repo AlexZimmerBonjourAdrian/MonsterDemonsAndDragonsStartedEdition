@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CPlayerNatalia : PlayerMovement
 {
-    public CharacterController2D controller;
-    public Animator animator;
+    //public CharacterController2D controller;
+    //public Animator animator;
 
-    public float runSpeed = 40f;
+    //public float runSpeed = 40f;
     private Rigidbody2D _rigidbody2D;
     private float _horizontalMove = 0f;
     private bool jump = true;

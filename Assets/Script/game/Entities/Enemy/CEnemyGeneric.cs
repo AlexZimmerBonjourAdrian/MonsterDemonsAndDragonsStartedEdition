@@ -5,6 +5,22 @@ using UnityEngine;
 
 public class CEnemyGeneric : MonoBehaviour, ICollision
 {
+
+    // private CStateEnemy estado;
+    public IEnemyState state;
+    public IEnemyState State
+    {
+        get
+        {
+            return this.state;
+        }
+        set
+        {
+            this.state = value;
+        }
+    }
+
+    
     // Start is called before the first frame update
     [SerializeField]
     protected CEnemyData Enemy;
@@ -17,7 +33,9 @@ public class CEnemyGeneric : MonoBehaviour, ICollision
     protected float DamageMelee;
     protected float DelayChangeState;
     protected bool IsDistance;
-
+    
+    //private CState currentState;
+    
     protected virtual void Start()
     {
         name = Enemy.name;
@@ -29,6 +47,9 @@ public class CEnemyGeneric : MonoBehaviour, ICollision
         DamageMelee = Enemy.DamageMelee;
         DelayChangeState = Enemy.DelayChangeState;
         IsDistance = Enemy.IsDistance;
+       // SetState(new CEIdleState(this));
+        
+        
     }
     // protected float 
     public virtual void OnCollision()
@@ -63,11 +84,13 @@ public class CEnemyGeneric : MonoBehaviour, ICollision
     {
         return this.Damage;
     }
-    public void Update()
+    public virtual void Update()
     {
         CheckLife();
+       // this.State.Update(this);
+        //currentState.Tick();
     }
-    private void CheckLife()
+    protected virtual void CheckLife()
     {
         if (getLife() >= 100f)
         {
@@ -81,13 +104,51 @@ public class CEnemyGeneric : MonoBehaviour, ICollision
         {
             Debug.Log("La vida es muy baja");
         }
+        /*
         else
         {
             Destroy(gameObject);
         }
+        */
 
 
     }
+    /*
+    public void setState(CStateEnemy state)
+    {
+        this.estado = state;
+        this.estado.setEnemy(this);
+    }
+    */
+    /*
+    public  void SetState(CState state)
+    {
+        if(currentState != null)
+        {
+            currentState.OnStateExit();
+        }
+
+        currentState = state;
+        gameObject.name = "Enemy - " + state.GetType().Name;
+
+        if(currentState != null)
+        {
+            currentState.OnStateEnter();
+        }
+    }
+
+    public void MoveForward(Vector3 destination)
+    {
+        var derection = GetDirection(destination);
+        transform.Translate(derection * Time.deltaTime * SpeedMovement);
+    }
+
+    private Vector3 GetDirection(Vector3 destination)
+    {
+        return (destination - transform.position).normalized;
+    }
+
+    */
     /*
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -96,6 +157,9 @@ public class CEnemyGeneric : MonoBehaviour, ICollision
 
         }
     }
+    *
+    *
     */
+   
     
 }
