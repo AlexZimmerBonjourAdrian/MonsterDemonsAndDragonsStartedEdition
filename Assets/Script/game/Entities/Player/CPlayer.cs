@@ -2,8 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CPlayer : MonoBehaviour
 {
+    /*
+    const float skinwidth = .015f;
+    BoxCollider2D collider;
+    RayCastOrigin rayCastOrigin
+    */
+    
+
+
     /*
    private CMoveSystem controller;
     [SerializeField]private float _Speed =200f;
