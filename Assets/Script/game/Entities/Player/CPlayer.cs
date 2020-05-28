@@ -3,14 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+[RequireComponent (typeof (CController2d))]
 public class CPlayer : MonoBehaviour
 {
+    float moveSpeed = 6;
+    float gravity = -20;
+    Vector3 velocity;
+    
+    CController2d controller;
+
+    void Start()
+    {
+        controller = GetComponent<CController2d>();     
+    }
+    private void Update()
+    {
+
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+       // velocity = input.x = moveSpeed;
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
+    }
     /*
     const float skinwidth = .015f;
     BoxCollider2D collider;
     RayCastOrigin rayCastOrigin
     */
-    
+
 
 
     /*
