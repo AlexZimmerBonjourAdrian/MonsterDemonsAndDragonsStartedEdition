@@ -180,12 +180,14 @@
     <Compile Include="Assets\Script\game\Entities\Items\items\consumibles\CShield.cs" />
     <Compile Include="Assets\Script\game\Entities\Neutral\Forest\CBishis.cs" />
     <Compile Include="Assets\Script\game\Entities\Neutral\Temple-DemonWorld\CGolems.cs" />
-    <Compile Include="Assets\Script\game\Entities\Player\CController2d.cs" />
-    <Compile Include="Assets\Script\game\Entities\Player\CPlataformController.cs" />
     <Compile Include="Assets\Script\game\Entities\Player\CPlayer.cs" />
     <Compile Include="Assets\Script\game\Entities\Player\CPlayerLoop.cs" />
     <Compile Include="Assets\Script\game\Entities\Player\CPlayerNatalia.cs" />
     <Compile Include="Assets\Script\game\Entities\Player\CRayController.cs" />
+    <Compile Include="Assets\Script\game\Entities\Player\Controller2D.cs" />
+    <Compile Include="Assets\Script\game\Entities\Player\PlatformController.cs" />
+    <Compile Include="Assets\Script\game\Entities\Player\Player.cs" />
+    <Compile Include="Assets\Script\game\Entities\Player\RaycastController.cs" />
     <Compile Include="Assets\Script\game\Entities\weapon\CGenericWeapon.cs" />
     <Compile Include="Assets\Script\game\Entities\weapon\LoopWeapon\CMiniMiniGun.cs" />
     <Compile Include="Assets\Script\game\Entities\weapon\LoopWeapon\CPistolAcid.cs" />

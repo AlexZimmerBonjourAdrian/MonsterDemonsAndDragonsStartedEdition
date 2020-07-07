@@ -5,9 +5,12 @@ using UnityEngine;
 /// <summary>
 /// Font https://www.youtube.com/watch?v=PlT44xr0iW0&list=PLFt_AvWsXl0f0hqURlhyIoAabKPgRsqjz&index=3
 /// </summary>
-[RequireComponent (typeof (CController2d))]
+/// 
+
+//[RequireComponent (typeof (CController2d))]
 public class CPlayer : MonoBehaviour
 {
+    /*
  
     public float jumpHeight = 4;
     public float timeToJumpApex=.4f;
@@ -30,7 +33,7 @@ public class CPlayer : MonoBehaviour
        
 
     }
-    private void Update()
+    void Update()
     {
         if(controller.collisions.above || controller.collisions.below)
         {
