@@ -7,6 +7,7 @@ using UnityEngine.Assertions.Must;
 
 public class CBullet :MonoBehaviour
 {
+
     /*
 
     //[SerializeField] private float TTL = .5f;

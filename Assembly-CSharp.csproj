@@ -203,12 +203,8 @@
     <Compile Include="Assets\Script\game\Entities\weapon\Special\Loop\CLatigo.cs" />
     <Compile Include="Assets\Script\game\Entities\weapon\Special\Natailia\CClaws.cs" />
     <Compile Include="Assets\Script\game\State\CTestLevelState.cs" />
-    <Compile Include="Assets\Script\game\State\Enemy\CEIdleEnemy.cs" />
-    <Compile Include="Assets\Script\game\State\Enemy\CEMoveState.cs" />
-    <Compile Include="Assets\Script\game\State\Enemy\CEnemyStateBase.cs" />
-    <Compile Include="Assets\Script\game\State\Enemy\CPlayerState.cs" />
-    <Compile Include="Assets\Script\game\State\Enemy\CStateEnemy.cs" />
-    <Compile Include="Assets\Script\game\State\Enemy\IEnemyState.cs" />
+    <Compile Include="Assets\Script\game\State\Enemy\CAbstractState.cs" />
+    <Compile Include="Assets\Script\game\State\Enemy\CIdleState.cs" />
     <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\readme.txt" />
     <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\environment\tiles\readme guides IMPORTANT.txt" />
     <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\license cc0 - public domain.txt" />

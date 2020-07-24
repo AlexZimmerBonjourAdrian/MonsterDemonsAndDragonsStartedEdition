@@ -49,7 +49,7 @@ public class CEnemy : CEnemyGeneric
     public override void Update()
     {
         CheckLife();
-        this.State.Update(this);
+       // this.State.Update(this);
     }
     protected override void CheckLife()
     {

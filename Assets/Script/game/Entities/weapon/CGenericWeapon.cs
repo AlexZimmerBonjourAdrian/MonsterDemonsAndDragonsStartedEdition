@@ -66,6 +66,7 @@ public  abstract class CGenericWeapon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            CControllerWeapon.Inst.addListWeapond(this);
             Destroy(gameObject);
         }
     }

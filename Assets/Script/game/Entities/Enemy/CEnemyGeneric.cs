@@ -5,33 +5,28 @@ using UnityEngine;
 
 public class CEnemyGeneric : MonoBehaviour, ICollision
 {
-
-    // private CStateEnemy estado;
-    public IEnemyState state;
-    public IEnemyState State
-    {
-        get
-        {
-            return this.state;
-        }
-        set
-        {
-            this.state = value;
-        }
-    }
-
     
     // Start is called before the first frame update
+
     [SerializeField]
     protected CEnemyData Enemy;
-     protected new string name;
+    [SerializeField]
+    protected new string name;
+    [SerializeField]
     protected string descripcion;
+    [SerializeField]
     protected float Health;
+    [SerializeField]
     protected float SpeedMovement;
+    [SerializeField]
     protected float Damage;
+    [SerializeField]
     protected float invulnerabilitytime;
+    [SerializeField]
     protected float DamageMelee;
+    [SerializeField]
     protected float DelayChangeState;
+    [SerializeField]
     protected bool IsDistance;
     
     //private CState currentState;
@@ -54,6 +49,7 @@ public class CEnemyGeneric : MonoBehaviour, ICollision
     // protected float 
     public virtual void OnCollision()
     {
+        //eSTO ES una collision con las balas para hacerle daño.
         List<CGenericBullet> var = CBulletManager.Inst.GetList();
         for(int i = var.Count-1;  i <= 0; i--)
         {

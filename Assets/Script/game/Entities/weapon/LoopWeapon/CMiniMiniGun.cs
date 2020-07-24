@@ -11,12 +11,18 @@ public class CMiniMiniGun : CGenericWeapon
     //string Name = new CGenericWeapon.Name;
 
     //Se assigna el valor mediante el contructor
+    /*
     public CMiniMiniGun()
     {
+
         Name = "Loop";
         Num = 3;
     }
-
+    */
+    public override void Start()
+    {
+        base.Start();
+    }
     public override string GetName()
     {
         return Name;
@@ -25,13 +31,9 @@ public class CMiniMiniGun : CGenericWeapon
     {
         return Num;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+    protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
-        {
-            CControllerWeapon.Inst.addListWeapond(this);
-            Destroy(gameObject);
-        }
+        base.OnCollisionEnter2D(collision);
     }
 }
