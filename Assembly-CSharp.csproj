@@ -106,6 +106,8 @@
     <Compile Include="Assets\Script\game\Controllers\Systems\CShootScript.cs" />
     <Compile Include="Assets\Script\game\Controllers\Systems\CharacterController2D.cs" />
     <Compile Include="Assets\Script\game\Controllers\Systems\Meele\CMeeleCombatSystem.cs" />
+    <Compile Include="Assets\Script\game\Controllers\Systems\Move\PhysicsObject.cs" />
+    <Compile Include="Assets\Script\game\Controllers\Systems\Move\PlayerPlataformerController.cs" />
     <Compile Include="Assets\Script\game\Controllers\Systems\PlayerMovement.cs" />
     <Compile Include="Assets\Script\game\Entities\Boss\Forest\CAcura.cs" />
     <Compile Include="Assets\Script\game\Entities\Boss\Forest\COctopecia.cs" />
