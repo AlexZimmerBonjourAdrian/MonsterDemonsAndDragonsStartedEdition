@@ -144,7 +144,7 @@ TextureImporter:
       213: -3147980757899884197
     second: FallPlayer_32x48_46
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -161,9 +161,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -172,9 +175,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -195,9 +198,15 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -209,6 +218,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -221,6 +231,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -233,6 +244,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -245,6 +257,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1247,9 +1273,56 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      FallPlayer_32x48_0: -5306682988735660270
+      FallPlayer_32x48_1: 7614410287016336883
+      FallPlayer_32x48_10: 3845986777126509938
+      FallPlayer_32x48_11: 183228062127691783
+      FallPlayer_32x48_12: -8287531553534971433
+      FallPlayer_32x48_13: 2915076339468172249
+      FallPlayer_32x48_14: 1428410699871400698
+      FallPlayer_32x48_15: 5839353892667975733
+      FallPlayer_32x48_16: -6621822042372785169
+      FallPlayer_32x48_17: 5845474202643901518
+      FallPlayer_32x48_18: 8997754178151801767
+      FallPlayer_32x48_19: 8913262187841943520
+      FallPlayer_32x48_2: 4252685338452171630
+      FallPlayer_32x48_20: -1774444963668684254
+      FallPlayer_32x48_21: 7932723963312153630
+      FallPlayer_32x48_22: 7380801802023804301
+      FallPlayer_32x48_23: -632258486740198115
+      FallPlayer_32x48_24: 8135346783024249569
+      FallPlayer_32x48_25: 6184257655429210395
+      FallPlayer_32x48_26: -3226617043613295659
+      FallPlayer_32x48_27: 7000563998227804938
+      FallPlayer_32x48_28: -7918880419408708781
+      FallPlayer_32x48_29: 5501653145472204854
+      FallPlayer_32x48_3: 3022611033917654767
+      FallPlayer_32x48_30: 1398386920341481093
+      FallPlayer_32x48_31: 1219871846972729424
+      FallPlayer_32x48_32: 8810153063581173235
+      FallPlayer_32x48_33: 2417718360469475010
+      FallPlayer_32x48_34: -1221204121098896373
+      FallPlayer_32x48_35: 2121545297577524869
+      FallPlayer_32x48_36: -3141233893251477111
+      FallPlayer_32x48_37: -967337490173238513
+      FallPlayer_32x48_38: -2726347455147906134
+      FallPlayer_32x48_39: -1582927280318447667
+      FallPlayer_32x48_4: -1817687629346168682
+      FallPlayer_32x48_40: 526372694647400618
+      FallPlayer_32x48_41: -4394260190109346067
+      FallPlayer_32x48_42: -6557361241615031948
+      FallPlayer_32x48_43: -4535404099255914523
+      FallPlayer_32x48_44: -3292307791081162921
+      FallPlayer_32x48_45: -947125108533979352
+      FallPlayer_32x48_46: -3147980757899884197
+      FallPlayer_32x48_5: -5865957441630464061
+      FallPlayer_32x48_6: -1912039369625895687
+      FallPlayer_32x48_7: -1374103233485263769
+      FallPlayer_32x48_8: 3297148446664635161
+      FallPlayer_32x48_9: 5300581331046174287
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
