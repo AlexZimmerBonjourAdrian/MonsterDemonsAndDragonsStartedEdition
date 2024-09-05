@@ -1,21 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="Current">
   <!-- Generated file, do not modify, your changes will be overwritten (use AssetPostprocessor.OnGeneratedCSProject) -->
   <PropertyGroup>
-    <LangVersion>9.0</LangVersion>
+    <BaseIntermediateOutputPath>Temp\obj\$(Configuration)\$(MSBuildProjectName)</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
   </PropertyGroup>
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+  <ItemGroup>
+    <ProjectCapability Include="Unity" />
+  </ItemGroup>
   <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <LangVersion>9.0</LangVersion>
+    <Configurations>Debug;Release</Configurations>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.20506</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9373B26D-1428-3D50-B9F3-C686D04CCE32}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -39,174 +44,173 @@
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
-    <NoConfig>true</NoConfig>
+    <NoStandardLibraries>true</NoStandardLibraries>
     <NoStdLib>true</NoStdLib>
-    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
-    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
-    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+    <NoConfig>true</NoConfig>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <MSBuildWarningsAsMessages>MSB3277</MSBuildWarningsAsMessages>
   </PropertyGroup>
   <PropertyGroup>
-    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
     <UnityProjectGeneratorVersion>2.0.22</UnityProjectGeneratorVersion>
-    <UnityProjectGeneratorStyle>Legacy</UnityProjectGeneratorStyle>
+    <UnityProjectGeneratorStyle>SDK</UnityProjectGeneratorStyle>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2022.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\AlexZimmer\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.0.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="E:\UnityInstalled\2022.3.16f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="E:\UnityInstalled\2022.3.16f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\ScriptableObject\CEnemyData.cs" />
-    <Compile Include="Assets\Script\Manager\WeapondManager\CManagerWeapond.cs" />
-    <Compile Include="Assets\Script\Manager\GameManager\CGameManager.cs" />
-    <Compile Include="Assets\Script\game\Entities\Bullets\CBulletMiniMiniGun.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\CEnemy.cs" />
-    <Compile Include="Assets\Script\game\Controllers\Dialogue\CDialogue.cs" />
-    <Compile Include="Assets\Script\AttributeCondition\NumericType.cs" />
-    <Compile Include="Assets\Script\game\State\CTestLevelState.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\Forest\CSteelWolf.cs" />
-    <Compile Include="Assets\Script\game\Entities\Boss\Mansion\CJuzst.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CDalart.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\NataliaWeapond\CHandSmg.cs" />
-    <Compile Include="Assets\Script\game\Entities\Bullets\CBulletPistolAcid.cs" />
-    <Compile Include="Assets\Script\Interface\Iinteractive.cs" />
-    <Compile Include="Assets\Script\game\Entities\Player\CPlayer.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Industria\CMeduzas.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Industria\CCiter.cs" />
-    <Compile Include="Assets\Script\game\Entities\Bullets\CBullet.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Industria\CToxicons.cs" />
-    <Compile Include="Assets\Script\PlayHolder\CGenericCharacter.cs" />
-    <Compile Include="Assets\Script\game\Entities\Bullets\CCollisionBullet.cs" />
-    <Compile Include="Assets\Script\game\Entities\Neutral\Forest\CBishis.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Industria\CGoleats.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Industria\CPloyer.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Templle-DemonWorld\CVatsa.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\LoopWeapon\CShootGunHAMMER.cs" />
-    <Compile Include="Assets\Script\Manager\GameObject\CGameObject.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CBongso.cs" />
-    <Compile Include="Assets\Script\game\Entities\Items\items\CUsed.cs" />
-    <Compile Include="Assets\Script\EditorWindows\EditorNode\ConnectionPoint.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Mansion\CLooter.cs" />
-    <Compile Include="Assets\Script\game\Entities\Items\Food\CFood.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\LoopWeapon\CPistolM1911.cs" />
-    <Compile Include="Assets\Script\game\Entities\Items\CGenericItem.cs" />
-    <Compile Include="Assets\CMenuManager.cs" />
-    <Compile Include="Assets\Script\AttributeCondition\NumericTypeExpectedException.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\Special\Loop\CLatigo.cs" />
-    <Compile Include="Assets\Script\game\State\Enemy\CAbstractState.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\LoopWeapon\CRifleGarad.cs" />
-    <Compile Include="Assets\Script\game\Entities\Boss\Temple-DemonWorld\CPollyform.cs" />
-    <Compile Include="Assets\Script\Manager\Character\CCharacterControllers.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CAlice.cs" />
-    <Compile Include="Assets\Script\ScriptableObject\CWeaponMeeleData.cs" />
-    <Compile Include="Assets\Script\game\Entities\Player\CRayController.cs" />
-    <Compile Include="Assets\Script\game\Entities\Boss\Mansion\CCaptenvoid.cs" />
-    <Compile Include="Assets\Script\game\State\Enemy\CIdleState.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CVampireLoris.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CLois.cs" />
-    <Compile Include="Assets\Script\game\Controllers\Systems\Meele\CMeeleCombatSystem.cs" />
-    <Compile Include="Assets\Script\PlayHolder\CCharacterMuffet.cs" />
-    <Compile Include="Assets\Script\game\Entities\Bullets\CBulletShootGunHAMMER.cs" />
-    <Compile Include="Assets\Script\game\Entities\Items\Food\Herency\CTofuFish.cs" />
-    <Compile Include="Assets\Script\EditorWindows\EditorNode\CDialogEditor.cs" />
-    <Compile Include="Assets\Script\AttributeCondition\IsNumbericType.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Templle-DemonWorld\CSummoner.cs" />
-    <Compile Include="Assets\Script\game\Entities\Items\items\consumibles\CBomb.cs" />
-    <Compile Include="Assets\Script\game\Controllers\Systems\CShootScript.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\DrFluu.cs" />
-    <Compile Include="Assets\Script\game\Controllers\Systems\PlayerMovement.cs" />
-    <Compile Include="Assets\Script\game\Entities\Bullets\CGenericBullet.cs" />
-    <Compile Include="Assets\Script\game\Entities\Player\PlatformController.cs" />
-    <Compile Include="Assets\Script\Switch\CSwitch.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\NataliaWeapond\CAirCannon.cs" />
-    <Compile Include="Assets\Script\game\Entities\Boss\Forest\CAcura.cs" />
-    <Compile Include="Assets\Script\game\Entities\Bullets\CBulletSniperLaser.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\Forest\CShadowCat.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CEsmeralda.cs" />
-    <Compile Include="Assets\Script\game\Entities\Player\Controller2D.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CZafiro.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Mansion\CSoulLook.cs" />
-    <Compile Include="Assets\Script\game\Entities\Bullets\CBulletAirCannon.cs" />
-    <Compile Include="Assets\Script\game\Entities\Bullets\CBulletFlameShoot.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Templle-DemonWorld\CWharingos.cs" />
-    <Compile Include="Assets\Script\game\Entities\Items\items\consumibles\CShield.cs" />
-    <Compile Include="Assets\Script\AttributeCondition\DrawIfAttribute.cs" />
-    <Compile Include="Assets\Script\game\Entities\Player\Player.cs" />
-    <Compile Include="Assets\Script\Manager\GenerciManager\CManager.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\Special\Natailia\CClaws.cs" />
-    <Compile Include="Assets\Script\Manager\itemsManager\CItemsManager.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CShafira.cs" />
-    <Compile Include="Assets\Script\Manager\EnemyManager\CEnemyManager.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Forest\CBibif.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CMoffin.cs" />
-    <Compile Include="Assets\Script\AttributeCondition\DrawIfPropertyDrawer.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CXlf38.cs" />
-    <Compile Include="Assets\Script\game\Entities\Bullets\CBulletHandSmg.cs" />
-    <Compile Include="Assets\Script\game\Entities\Items\Food\Herency\CBurguerSoda.cs" />
-    <Compile Include="Assets\Script\game\Entities\Boss\Forest\COctopecia.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Templle-DemonWorld\CWarrior.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\Forest\CArbolia.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Templle-DemonWorld\CSilenciator.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Mansion\CGhostSout.cs" />
-    <Compile Include="Assets\Script\game\Controllers\Systems\CharacterController2D.cs" />
-    <Compile Include="Assets\Script\EditorWindows\EditorNode\NodeBasedEditor.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CHolly.cs" />
-    <Compile Include="Assets\Script\game\Entities\Items\Food\Herency\CHam.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\NataliaWeapond\CSmallSMG.cs" />
-    <Compile Include="Assets\Script\Manager\Bullet\CBulletManager.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\LoopWeapon\CPistolAcid.cs" />
-    <Compile Include="Assets\Script\game\Entities\CBox.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\Other\CMoxxie.cs" />
-    <Compile Include="Assets\Script\Interface\ICollision.cs" />
-    <Compile Include="Assets\Script\game\Entities\Player\CPlayerNatalia.cs" />
-    <Compile Include="Assets\Script\game\Entities\Player\RaycastController.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Forest\CManticora.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Forest\CBorixon.cs" />
-    <Compile Include="Assets\Script\game\Entities\Player\CPlayerLoop.cs" />
-    <Compile Include="Assets\Script\game\Entities\Bullets\CM1GaratBullet.cs" />
-    <Compile Include="Assets\Script\ScriptableObject\CWeaponData.cs" />
-    <Compile Include="Assets\Script\ScriptableObject\CBulletData.cs" />
-    <Compile Include="Assets\Script\game\Controllers\Detction\CRaycasting.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\NataliaWeapond\CFlameShoot.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\CEnemyGeneric.cs" />
-    <Compile Include="Assets\Script\game\Controllers\Dialogue\CDialogueTrigger.cs" />
-    <Compile Include="Assets\Script\game\Entities\Items\items\consumibles\CADNPotion.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Player\CPlayerNatalia.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\NataliaWeapond\CHandSmg.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\Forest\CSteelWolf.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Player\PlatformController.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Boss\Mansion\CCaptenvoid.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Player\CPlayer.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Templle-DemonWorld\CSilenciator.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\Forest\CShadowCat.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Bullets\CBulletShootGunHAMMER.cs" />
+    <Compile Include="Assets\MDD\Script\Interface\ICollision.cs" />
+    <Compile Include="Assets\MDD\Script\game\Controllers\Systems\CShootScript.cs" />
+    <Compile Include="Assets\MDD\Script\game\State\CTestLevelState.cs" />
+    <Compile Include="Assets\MDD\Script\game\Controllers\Systems\PlayerMovement.cs" />
+    <Compile Include="Assets\MDD\Script\Manager\Character\CCharacterControllers.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Boss\Temple-DemonWorld\CPollyform.cs" />
+    <Compile Include="Assets\MDD\Script\AttributeCondition\NumericType.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Items\CGenericItem.cs" />
+    <Compile Include="Assets\MDD\Script\Manager\GameObject\CGameObject.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Boss\Indusrie\CGeneralariorca.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\CEnemy.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Industria\CPloyer.cs" />
+    <Compile Include="Assets\MDD\Script\EditorWindows\EditorNode\NodeBasedEditor.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Items\items\consumibles\CADNPotion.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Bullets\CBulletSniperLaser.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Items\Food\Herency\CPepsa.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Forest\CBorixon.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Industria\CToxicons.cs" />
+    <Compile Include="Assets\MDD\Script\Manager\WeapondManager\CManagerWeapond.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Bullets\CBulletMiniMiniGun.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Industria\CCiter.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Industria\CMeduzas.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\CBox.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\Special\Loop\CElectrigGlow.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Items\Food\Herency\CBistefCarrot.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CDalart.cs" />
+    <Compile Include="Assets\MDD\Script\AttributeCondition\DrawIfPropertyDrawer.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CMoffin.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Forest\CPejesapo.cs" />
+    <Compile Include="Assets\MDD\Script\EditorWindows\EditorNode\CDialogEditor.cs" />
+    <Compile Include="Assets\MDD\Script\game\Controllers\Systems\Meele\CMeeleCombatSystem.cs" />
+    <Compile Include="Assets\MDD\Script\game\Controllers\Detction\CRaycasting.cs" />
+    <Compile Include="Assets\MDD\Script\Manager\GameManager\CGameManager.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Mansion\CLooter.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\LoopWeapon\CShootGunHAMMER.cs" />
+    <Compile Include="Assets\MDD\Script\EditorWindows\EditorNode\Node.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\NataliaWeapond\CFlameShoot.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Industria\CGoleats.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Neutral\Temple-DemonWorld\CGolems.cs" />
+    <Compile Include="Assets\MDD\Script\EditorWindows\WindowsEditorBullet.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Mansion\CGhostSout.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Bullets\CM1GaratBullet.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Bullets\CBulletSmallSMG.cs" />
+    <Compile Include="Assets\MDD\Script\Manager\GenerciManager\CManager.cs" />
     <Compile Include="Assets\CGizmo.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Forest\CPejesapo.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\Special\Loop\CElectrigGlow.cs" />
-    <Compile Include="Assets\Script\game\Entities\Neutral\Temple-DemonWorld\CGolems.cs" />
-    <Compile Include="Assets\Script\game\Entities\Bullets\CBulletPistolM1911.cs" />
-    <Compile Include="Assets\Script\Manager\Dialogue\CDialogueManager.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CMakashi.cs" />
-    <Compile Include="Assets\Script\Manager\PlayerManager\CPlayerManager.cs" />
-    <Compile Include="Assets\Script\game\Entities\Boss\Indusrie\CGeneralariorca.cs" />
-    <Compile Include="Assets\Script\EditorWindows\WindowsEditorBullet.cs" />
-    <Compile Include="Assets\Script\game\Controllers\Detction\CCollision.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CBpnnivel.cs" />
-    <Compile Include="Assets\Script\ScriptableObject\CItemData.cs" />
-    <Compile Include="Assets\Script\game\Entities\Items\items\consumibles\CPotion.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\CGenericWeapon.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\NataliaWeapond\CSniperLaser.cs" />
-    <Compile Include="Assets\Script\Manager\Character\CCHaracterManager.cs" />
-    <Compile Include="Assets\Script\game\Entities\Character\City\CWhithmask.cs" />
-    <Compile Include="Assets\Script\game\Entities\weapon\LoopWeapon\CMiniMiniGun.cs" />
+    <Compile Include="Assets\MDD\Script\Manager\PlayerManager\CPlayerManager.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\CGenericWeapon.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\Other\CMoxxie.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Forest\CBibif.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Items\items\consumibles\CShield.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\NataliaWeapond\CSmallSMG.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CVampireLoris.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Bullets\CBulletPistolAcid.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Bullets\CCollisionBullet.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CAlice.cs" />
     <Compile Include="Assets\CControllerWeapon.cs" />
-    <Compile Include="Assets\Script\game\Entities\Enemy\Mansion\CBajomis.cs" />
-    <Compile Include="Assets\Script\game\Entities\Items\Food\Herency\CBistefCarrot.cs" />
-    <Compile Include="Assets\Script\game\Entities\Bullets\CBulletSmallSMG.cs" />
-    <Compile Include="Assets\Script\EditorWindows\EditorNode\Node.cs" />
-    <Compile Include="Assets\Script\EditorWindows\EditorNode\Connection.cs" />
-    <Compile Include="Assets\Script\game\Entities\Items\Food\Herency\CPepsa.cs" />
-    <Compile Include="Assets\Script\game\Controllers\Systems\CMoveSystem.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Items\items\consumibles\CBomb.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Bullets\CBulletPistolM1911.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Bullets\CBulletAirCannon.cs" />
+    <Compile Include="Assets\MDD\Script\ScriptableObject\CBulletData.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Player\CRayController.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\NataliaWeapond\CSniperLaser.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Templle-DemonWorld\CWharingos.cs" />
+    <Compile Include="Assets\MDD\Script\game\Controllers\Systems\CharacterController2D.cs" />
+    <Compile Include="Assets\MDD\Script\ScriptableObject\CWeaponData.cs" />
+    <Compile Include="Assets\MDD\Script\Manager\Character\CCHaracterManager.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\LoopWeapon\CMiniMiniGun.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Player\Controller2D.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CHolly.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CBongso.cs" />
+    <Compile Include="Assets\MDD\Script\AttributeCondition\NumericTypeExpectedException.cs" />
+    <Compile Include="Assets\CMenuManager.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Neutral\Forest\CBishis.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Templle-DemonWorld\CWarrior.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Items\Food\Herency\CTofuFish.cs" />
+    <Compile Include="Assets\MDD\Script\game\Controllers\Dialogue\CDialogueTrigger.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CZafiro.cs" />
+    <Compile Include="Assets\MDD\Script\ScriptableObject\CItemData.cs" />
+    <Compile Include="Assets\MDD\Script\AttributeCondition\IsNumbericType.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Bullets\CGenericBullet.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Items\items\consumibles\CPotion.cs" />
+    <Compile Include="Assets\MDD\Script\Manager\Bullet\CBulletManager.cs" />
+    <Compile Include="Assets\MDD\Script\Switch\CSwitch.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Boss\Mansion\CJuzst.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Bullets\CBulletHandSmg.cs" />
+    <Compile Include="Assets\MDD\Script\game\Controllers\Systems\CMoveSystem.cs" />
+    <Compile Include="Assets\MDD\Script\Manager\itemsManager\CItemsManager.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Items\Food\Herency\CBurguerSoda.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Forest\CManticora.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Items\items\CUsed.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CXlf38.cs" />
+    <Compile Include="Assets\MDD\Script\Manager\Dialogue\CDialogueManager.cs" />
+    <Compile Include="Assets\MDD\Script\EditorWindows\EditorNode\ConnectionPoint.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\DrFluu.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Player\CPlayerLoop.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CMakashi.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Bullets\CBullet.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\Special\Natailia\CClaws.cs" />
+    <Compile Include="Assets\MDD\Script\ScriptableObject\CEnemyData.cs" />
+    <Compile Include="Assets\MDD\Script\game\State\Enemy\CIdleState.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CEsmeralda.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\NataliaWeapond\CAirCannon.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\CEnemyGeneric.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\Special\Loop\CLatigo.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\Forest\CArbolia.cs" />
+    <Compile Include="Assets\MDD\Script\game\Controllers\Dialogue\CDialogue.cs" />
+    <Compile Include="Assets\MDD\Script\PlayHolder\CGenericCharacter.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Bullets\CBulletFlameShoot.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CLois.cs" />
+    <Compile Include="Assets\MDD\Script\game\Controllers\Detction\CCollision.cs" />
+    <Compile Include="Assets\MDD\Script\game\State\Enemy\CAbstractState.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CWhithmask.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Boss\Forest\COctopecia.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CBpnnivel.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Items\Food\CFood.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Character\City\CShafira.cs" />
+    <Compile Include="Assets\MDD\Script\AttributeCondition\DrawIfAttribute.cs" />
+    <Compile Include="Assets\MDD\Script\EditorWindows\EditorNode\Connection.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Items\Food\Herency\CHam.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Boss\Forest\CAcura.cs" />
+    <Compile Include="Assets\MDD\Script\PlayHolder\CCharacterMuffet.cs" />
+    <Compile Include="Assets\MDD\Script\Manager\EnemyManager\CEnemyManager.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\LoopWeapon\CPistolM1911.cs" />
+    <Compile Include="Assets\MDD\Script\ScriptableObject\CWeaponMeeleData.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Mansion\CBajomis.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Templle-DemonWorld\CSummoner.cs" />
+    <Compile Include="Assets\MDD\Script\Interface\Iinteractive.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\LoopWeapon\CPistolAcid.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\weapon\LoopWeapon\CRifleGarad.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Mansion\CSoulLook.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Player\RaycastController.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Player\Player.cs" />
+    <Compile Include="Assets\MDD\Script\game\Entities\Enemy\Templle-DemonWorld\CVatsa.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\readme.txt" />
-    <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\environment\tiles\readme guides IMPORTANT.txt" />
-    <None Include="Assets\Resources\opp1_jungle_tiles\opp1_jungle_tiles\license cc0 - public domain.txt" />
+    <None Include="Assets\MDD\Resources\opp1_jungle_tiles\opp1_jungle_tiles\readme.txt" />
+    <None Include="Assets\MDD\Resources\opp1_jungle_tiles\opp1_jungle_tiles\environment\tiles\readme guides IMPORTANT.txt" />
+    <None Include="Assets\MDD\Resources\opp1_jungle_tiles\opp1_jungle_tiles\license cc0 - public domain.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -555,6 +559,18 @@
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
       <HintPath>Library\PackageCache\com.unity.analytics@3.8.1\AnalyticsStandardEvents\Unity.Analytics.StandardEvents.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>E:\UnityInstalled\2022.3.16f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>E:\UnityInstalled\2022.3.16f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.GradleProject">
+      <HintPath>E:\UnityInstalled\2022.3.16f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
@@ -1176,13 +1192,16 @@
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+  <ItemGroup>
+    <ProjectCapability Remove="LaunchProfiles" />
+    <ProjectCapability Remove="SharedProjectReferences" />
+    <ProjectCapability Remove="ReferenceManagerSharedProjects" />
+    <ProjectCapability Remove="ProjectReferences" />
+    <ProjectCapability Remove="ReferenceManagerProjects" />
+    <ProjectCapability Remove="COMReferences" />
+    <ProjectCapability Remove="ReferenceManagerCOM" />
+    <ProjectCapability Remove="AssemblyReferences" />
+    <ProjectCapability Remove="ReferenceManagerAssemblies" />
+  </ItemGroup>
 </Project>
